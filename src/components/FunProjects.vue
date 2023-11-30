@@ -29,7 +29,7 @@
     <v-row class="d-flex mb-auto">
       <v-col class="d-flex justify-center mx-auto order-last order-md-first pb-0">
         <v-sheet v-if="!inIframe()" class="d-flex" :elevation="2" border style="width: 100%; height: 330px; min-width: 400px; max-width: 700px;">
-          <iframe class="w-100" src="http://oscar.fickel.nl/"></iframe>
+          <iframe class="w-100" src="https://oscar.fickel.nl/"></iframe>
         </v-sheet>
         <v-card v-else variant="tonal" class=" d-flex justify-center align-center text-center" width="500" height="200" align-center justify-center
         style="min-width: 200px;">
