@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex mt-4 mb-1 ml-1 align-center">
-    <v-btn v-if="pagelink != null" target="_blank" href="">Learn more</v-btn>
+    <v-btn v-if="pagelink != null" target="_blank" :href="pagelink">Learn more</v-btn>
     <v-btn v-else-if="morelink != null" @click="$router.push(morelink)">Learn more</v-btn>
     <v-btn v-if="codelink != null" class="ml-4" target="_blank" :href="codelink">Source code</v-btn>
     <div v-if="grade != null" class="d-flex  mx-auto flex-column justify-center align-center text-center" max-width="100">

@@ -30,7 +30,6 @@ The effects of this were marginal, but I was able provide reasoning as to how, i
           <video controls="true" class="video" height="400" ref="video">
             <source src="@/assets/ThesisDemo.mp4" type="video/mp4">
           </video>
-          <!-- <v-img max-height="400" src="@/assets/ThesisImage.png" /> -->
       </v-col>
     </v-row>
   </v-container>

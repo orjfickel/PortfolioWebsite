@@ -24,8 +24,6 @@ spread out in the room.
       </v-col>
       <v-col class="d-flex justify-center align-start">
         <v-img max-height="400" src="@/assets/RotatingDosageHeatmapSlower.gif" />
-
-          <!-- <v-img max-height="400" src="@/assets/ThesisImage.png" /> -->
       </v-col>
     </v-row>
   </v-container>

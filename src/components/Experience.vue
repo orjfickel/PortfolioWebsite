@@ -9,10 +9,6 @@
       size="small"
       min-width="100%"
     >
-      <!-- <template v-slot:icon>
-        <v-avatar image="@/assets/project_logos/uu.png"></v-avatar>
-      </template> -->
-
       <div class="d-flex">
         <div>
         <div><strong class="me-4 text-no-wrap">2020-2021</strong></div>
