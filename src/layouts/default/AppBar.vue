@@ -10,8 +10,9 @@
 
     <template v-slot:append>
     <div class="headerbuttons ">
-      <v-btn  @click="$router.push('/#home')">Home</v-btn>
-      <v-btn  @click="$router.push('/#projects')">Projects</v-btn>
+      <v-btn  @click="$router.push('/')">Home</v-btn>
+      <v-btn  @click="$router.push('/#technicalprojects')">Technical Projects</v-btn>
+      <v-btn  @click="$router.push('/#funprojects')">Just For Fun Projects</v-btn>
       <v-btn  @click="$router.push('/#education')">Education</v-btn>
       <v-btn  @click="$router.push('/#experience')">Experience</v-btn>
       <v-btn  @click="$router.push('/#certificates')">Certificates</v-btn>
@@ -23,11 +24,14 @@
         </template>
 
         <v-list>
-          <v-list-item @click="$router.push('/#home')">
+          <v-list-item @click="$router.push('/')">
             <v-list-item-title> Home </v-list-item-title>
           </v-list-item>
-          <v-list-item @click="$router.push('/#projects')">
-            <v-list-item-title> Projects </v-list-item-title>
+          <v-list-item @click="$router.push('/#technicalprojects')">
+            <v-list-item-title> Technical Projects </v-list-item-title>
+          </v-list-item>
+          <v-list-item @click="$router.push('/#funprojects')">
+            <v-list-item-title> Just For Fun Projects </v-list-item-title>
           </v-list-item>
           <v-list-item @click="$router.push('/#education')">
             <v-list-item-title> Education </v-list-item-title>
@@ -61,7 +65,7 @@ export default {
 
 .dropdown { display: none; }
 
-@media (max-width: 50em) {
+@media (max-width: 43em) {
   .headerbuttons     { display: none; }
   .dropdown { display: inline-block; }
 }

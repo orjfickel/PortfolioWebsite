@@ -1,6 +1,7 @@
 <template>
   <Me id="home"/>
-  <Projects id="projects"/>
+  <TechnicalProjects id="technicalprojects"/>
+  <FunProjects id="funprojects"/>
   <v-container class="">
     <div class="edusperience d-flex">
       <div>
@@ -22,7 +23,8 @@
 
 <script setup>
   import HelloWorld from '@/components/HelloWorld.vue'
-  import Projects from '@/components/Projects.vue'
+  import TechnicalProjects from '@/components/TechnicalProjects.vue'
+  import FunProjects from '@/components/FunProjects.vue'
   import Education from '@/components/Education.vue'
   import Experience from '@/components/Experience.vue'
   import Certificates from '@/components/Certificates.vue'
