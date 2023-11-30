@@ -1,7 +1,7 @@
 <template>
 
 <v-container class="">
-  <h1 class="text-h2 d-flex justify-center">Projects</h1>
+  <h1 class="text-h2 d-flex justify-center">Technical Projects</h1>
 
   <v-divider class="mt-8 mb-10 "></v-divider>
 
@@ -115,6 +115,10 @@
 
   <v-divider class="mt-8 mb-10 "></v-divider>
 
+  <h1 class="text-h2 d-flex justify-center">Just For Fun Projects</h1>
+
+  <v-divider class="mt-8 mb-10 "></v-divider>
+
   <div class="project">
     <v-row class="d-flex mb-auto">
       <v-col cols="auto" md="">
@@ -140,11 +144,12 @@ that introduces bouncy ball physics to Minecraft.</span>
   <div class="project">
     <v-row class="d-flex mb-auto">
       <v-col class="d-flex justify-center mx-auto order-last order-md-first">
-        <!-- <iframe v-if="!inIframe()" width="600" height="400" src="http://localhost:3000/"></iframe> -->
-        <iframe v-if="!inIframe()" width="600" height="400" src="https://oscar.fickel.nl/"></iframe>
+        <v-sheet v-if="!inIframe()" class="d-flex" :elevation="2" border>
+          <iframe width="600" height="400" src="http://oscar.fickel.nl/"></iframe>
+        </v-sheet>
         <v-card v-else variant="tonal" class=" d-flex justify-center align-center text-center" width="500" height="200" align-center justify-center
         style="min-width: 200px;">
-          <v-card-title> Nice try, but no recursion allowed! </v-card-title>
+          <v-card-body> Nice try, but no recursion allowed! </v-card-body>
         </v-card>
       </v-col>
       <v-col cols="auto" md="">
@@ -162,9 +167,6 @@ that introduces bouncy ball physics to Minecraft.</span>
 
   <div class="project">
     <v-row class="d-flex mb-auto">
-      <v-col class="d-flex justify-center mx-auto  order-last order-md-first">
-        <v-img min-width="400" max-width="700" src="@/assets/kiesgame.webp" />
-      </v-col>
       <v-col cols="auto" md="">
     <h2 class="projecttitle text-h4">Argus Kiesgame</h2>
         <v-responsive min-width="200"  class="text-justify">
@@ -173,6 +175,9 @@ that introduces bouncy ball physics to Minecraft.</span>
 
           <Grade pagelink="https://argusutrecht.wordpress.com/argus-kiesgame/"></Grade>
         </v-responsive>
+      </v-col>
+      <v-col class="d-flex justify-center mx-auto ">
+        <v-img min-width="400" max-width="700" src="@/assets/kiesgame.webp" />
       </v-col>
     </v-row>
   </div>
