@@ -18,13 +18,13 @@
       <v-btn  @click="$router.push('/#certificates')">Certificates</v-btn>
     </div>
 
-      <v-menu class="dropdown" open-on-hover >
+      <v-menu class="dropdown" ref="menuRef">
         <template v-slot:activator="{ props }">
           <v-btn  class="dropdown" icon="mdi-dots-vertical" v-bind="props"></v-btn>
         </template>
 
         <v-list>
-          <v-list-item @click="$router.push('/')">
+          <v-list-item @click="$router.push('/'); $refs.menuRef.isActive = false">
             <v-list-item-title> Home </v-list-item-title>
           </v-list-item>
           <v-list-item @click="$router.push('/#technicalprojects')">

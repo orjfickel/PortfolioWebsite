@@ -12,7 +12,7 @@
         :width="10"
         :model-value="grade * 10"
         color="teal"
-        class="mt-2 mb-2 mx-5"
+        class="mt-4 mb-2 mx-5"
       >
         {{ grade }}
       </v-progress-circular>

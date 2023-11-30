@@ -1,7 +1,7 @@
 <template>
 
 <v-container class="">
-  <h1 class="text-h2 d-flex justify-center">Just For Fun Projects</h1>
+  <h1 class="text-h2 d-flex text-center justify-center">Just For Fun Projects</h1>
 
   <v-divider class="mt-8 mb-10 "></v-divider>
 
