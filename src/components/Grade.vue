@@ -8,8 +8,8 @@
     <div v-if="grade != null" class="d-flex mt-auto ml-auto flex-column justify-center align-center text-center" max-width="100">
       <v-progress-circular
         :rotate="360"
-        :size="70"
-        :width="10"
+        :size="50"
+        :width="7"
         :model-value="grade * 10"
         color="teal"
         class="mt-4 mb-2 mx-5"
