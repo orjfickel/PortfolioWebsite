@@ -5,7 +5,7 @@
       <v-btn v-else-if="morelink != null" @click="$router.push(morelink)">Learn more</v-btn>
       <v-btn v-if="codelink != null" class="ml-4" target="_blank" :href="codelink">Source code</v-btn>
     </div>
-    <div v-if="grade != null" class="d-flex mt-auto mx-auto flex-column justify-center align-center text-center" max-width="100">
+    <div v-if="grade != null" class="d-flex mt-auto ml-auto flex-column justify-center align-center text-center" max-width="100">
       <v-progress-circular
         :rotate="360"
         :size="70"

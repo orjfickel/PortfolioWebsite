@@ -6,16 +6,9 @@
     Oscar Fickel
     </v-btn>
 
-    <!-- <router-link :to="{ hash: '#users' }">{{ $t('navigation.users') }}</router-link> -->
-
     <template v-slot:append>
     <div class="headerbuttons ">
-      <v-btn  @click="$router.push('/')">Home</v-btn>
-      <v-btn  @click="$router.push('/#technicalprojects')">Technical Projects</v-btn>
-      <v-btn  @click="$router.push('/#funprojects')">Just For Fun Projects</v-btn>
-      <v-btn  @click="$router.push('/#education')">Education</v-btn>
-      <v-btn  @click="$router.push('/#experience')">Experience</v-btn>
-      <v-btn  @click="$router.push('/#certificates')">Certificates</v-btn>
+      <v-btn v-for="section in sections" @click="$router.push(section.link)">{{ section.name }}</v-btn>
     </div>
 
       <v-menu class="dropdown" ref="menuRef">
@@ -24,23 +17,8 @@
         </template>
 
         <v-list>
-          <v-list-item @click="$router.push('/'); $refs.menuRef.isActive = false">
-            <v-list-item-title> Home </v-list-item-title>
-          </v-list-item>
-          <v-list-item @click="$router.push('/#technicalprojects')">
-            <v-list-item-title> Technical Projects </v-list-item-title>
-          </v-list-item>
-          <v-list-item @click="$router.push('/#funprojects')">
-            <v-list-item-title> Just For Fun Projects </v-list-item-title>
-          </v-list-item>
-          <v-list-item @click="$router.push('/#education')">
-            <v-list-item-title> Education </v-list-item-title>
-          </v-list-item>
-          <v-list-item @click="$router.push('/#experience')">
-            <v-list-item-title> Experience </v-list-item-title>
-          </v-list-item>
-          <v-list-item @click="$router.push('/#certificates')">
-            <v-list-item-title> Certificates </v-list-item-title>
+          <v-list-item v-for="section in sections" @click="$router.push(section.link)">
+            <v-list-item-title>{{ section.name }}</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>
@@ -56,6 +34,14 @@ export default {
   data() {
     return {
       temporaryVar: false,
+      sections: [
+        { name: "Home", link: "/#home"},
+        { name: "Technical Projects", link: "/#technicalprojects"},
+        { name: "Just-For-Fun Projects", link: "/#funprojects"},
+        { name: "Education", link: "/#education"},
+        { name: "Experience", link: "/#experience"},
+        { name: "Certificates", link: "/#certificates"},
+      ],
     };
   },
 };
