@@ -16,13 +16,15 @@
             >
           <span
           >Recently graduated with a Master’s degree in Computer Science
-  and passionate about graphics programming</span></div>
+(Game and Media Technology). I have spent the last year of my
+master’s focused on ray tracing, and hope to continue specialising
+in computer graphics and/or engine programming</span></div>
 
         </div>
 
         <div class="d-flex justify-end ml-auto mb-3 mt-3"
         >
-          <v-avatar size="160px" variant="elevated"  class="ml-3">
+          <v-avatar size="160px" variant="elevated"  class="ml-3 my-auto">
             <v-img height="200" src="@/assets/face.jpg" />
           </v-avatar>
         </div>
