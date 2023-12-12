@@ -13,7 +13,7 @@
         <div class="text-justify">
           <span class="">Reimplementing a paper on decorrelating ReSTIR
             via MCMC mutations and attempting to optimise it
-            for a blue noise error distribution. <br>
+            for a blue noise error distribution. Written in C++ and Slang (extension of HLSL). <br>
 
             See the accompanying video for a demonstration of the reduction in correlation artifacts
             in the form of bright streaks across the ceiling.
@@ -45,7 +45,8 @@
         <v-responsive min-width="200" class="text-justify">
           <span>Developing a program for ZorgSaam to show the
             effect of different UV lamp positions and durations
-            on the UV doses received by surfaces in the room. <br>
+            on the UV doses received by surfaces in the room.
+            Written in C++ and GLSL, and using OpenCL.
           </span>
         </v-responsive>
         <Grade grade="8.5" morelink="/projects/smallproject" codelink="https://github.com/orjfickel/Small-Project-UV-Robot-Ray-Tracer"></Grade>
@@ -62,8 +63,8 @@
           Game Internationale Operaties</h2>
         <div  class="text-justify">
           <span>Working in a team as Scrum master to develop
-          a point-and-click training game and accompanying
-          web-based scenario editor for the Politieacademie. <br>
+          a point-and-click training game in Unity, and accompanying
+          web-based scenario editor made with Vue, for the Politieacademie. <br>
 
           See the accompanying video for a trailer of the final product.
           </span>
@@ -126,11 +127,11 @@
   export default {
     data: () => ({
       cards: [
-        { title: 'Motion and Manipulation', description: 'Programming a 4-jointed digital ping pong robot', src: 'MOMA.png'},
-        { title: 'Game Physics', description: 'Implementing rope physics with position based dynamics', src: 'GP2.png'},
+        { title: 'Motion and Manipulation', description: 'Programming a 4-jointed digital ping pong robot in Haskell', src: 'MOMA.png'},
+        { title: 'Game Physics', description: 'Implementing rope physics with position based dynamics in Unity', src: 'GP2.png'},
         { title: 'Advanced Graphics', description:
-        "Implementing a mesh level and top level BVH acceleration structure that supports animations for a whitted style ray tracer", src: 'MAGR.png'},
-        { title: 'Mobile Interaction', description: 'Comparing the usability and efficiency of different VR typing methods', src: 'MOB1.png'},
+        "Implementing a mesh level and top level BVH acceleration structure that supports animations for a whitted style ray tracer in C++ and CUDA", src: 'MAGR.png'},
+        { title: 'Mobile Interaction', description: 'Comparing the usability and efficiency of different VR typing methods in Unity', src: 'MOB1.png'},
         { title: 'Optimisation and Vectorisation', description: 'Optimising a voxel based water simulation program for 50% speedup', src: 'MOV.png'},
         { title: 'Computer Vision', description: 'Using different camera angles to reconstruct a voxel representation of people\'s trajectories', src: 'CV.png'},
       ],
