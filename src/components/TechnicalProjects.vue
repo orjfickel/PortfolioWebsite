@@ -99,7 +99,7 @@
           max-width="400"
         >
         <v-img
-          :src="card.src"
+          :src="'/home/'+card.src"
           height="200px"
           cover
         ></v-img>
