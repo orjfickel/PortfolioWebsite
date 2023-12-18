@@ -3,9 +3,9 @@
 <div class="">
   <h1 class="text-h2 d-flex justify-center">Certificates</h1>
 
-  <v-divider class=" my-9 "></v-divider>
+  <v-divider class=" my-8 "></v-divider>
+
   <v-timeline side="end" align="start"
-  class="justify-start "
   >
     <v-timeline-item
       dot-color="primary"
@@ -27,7 +27,7 @@
               International Baccalaureate Organization
           </div>
         </div>
-        <v-img class="d-flex ma-2 ml-auto justify-end" min-width="50" max-width="50" src="@/assets/project_logos/ib.png" />
+        <v-img class="d-flex ma-2 mx-auto" min-width="50" max-width="50" src="@/assets/project_logos/ib.png" />
       </div>
     </v-timeline-item>
 

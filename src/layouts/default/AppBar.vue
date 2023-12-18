@@ -25,13 +25,14 @@
 
     <v-app-bar :style="{background: $vuetify.theme.current.colors.header,
                         color: $vuetify.theme.current.colors.headertext}">
-      <v-btn href="/">
+      <v-btn class="pa-2" href="/">
         Oscar Fickel
       </v-btn>
 
       <template v-slot:append>
         <div class="headerbuttons">
-          <v-btn v-for="section in sections" class="px-n1" @click="$router.push(section.link)">{{ section.name }}</v-btn>
+          <v-btn v-for="section in sections" :prepend-icon="section.icon"
+            class="headerbutton" @click="$router.push(section.link)">{{ section.name }}</v-btn>
         </div>
 
         <v-btn @click="toggleTheme" icon="mdi-brightness-6"></v-btn>
@@ -87,7 +88,11 @@ export default {
 <style scoped>
 .dropdown { display: none; }
 
-@media (max-width: 48em) {
+.headerbutton {
+  padding: 0px 15px;
+}
+
+@media (max-width: 52em) {
   .headerbuttons     { display: none; }
   .dropdown { display: inline-block; }
 }

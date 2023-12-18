@@ -1,6 +1,7 @@
 <template>
   <TechnicalProjects id="technicalprojects"/>
   <FunProjects id="funprojects"/>
+
 </template>
 
 

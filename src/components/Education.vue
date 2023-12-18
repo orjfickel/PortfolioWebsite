@@ -1,9 +1,9 @@
 <template>
 
-<div>
+<div class="pt-4">
   <h1 class="text-h2 d-flex justify-center">Education</h1>
 
-  <v-divider class=" my-9 "></v-divider>
+  <v-divider class=" my-8 "></v-divider>
   <v-timeline side="end" align="start" class=""
   >
     <v-timeline-item
@@ -84,7 +84,7 @@ technology.</div>
             Subjects: WI-B, WI-D, ENG (International Baccalaureate - Higher Level), NL, NA, SK, EC, DU</div>
         </div>
 
-        <v-img class="d-flex ma-2 ml-auto" min-width="50" max-width="50" src="@/assets/project_logos/hlml.jpg" />
+        <v-img class="d-flex ma-2 ml-auto" min-width="50" max-width="50" src="@/assets/project_logos/hlml.png" />
       </div>
     </v-timeline-item>
   </v-timeline>

@@ -1,7 +1,7 @@
 <template>
-<div>
+<div class="pt-4">
   <h1 class="text-h2 d-flex justify-center">Experience</h1>
-  <v-divider class=" my-9 "></v-divider>
+  <v-divider class=" my-8 "></v-divider>
   <v-timeline side="end" align="start"
   >
     <v-timeline-item

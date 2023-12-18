@@ -2,7 +2,9 @@
   <v-app>
     <default-bar />
 
-    <default-view />
+    <default-view :style="{
+                           color: $vuetify.theme.current.colors.bodytext}"/>
+
   </v-app>
 </template>
 

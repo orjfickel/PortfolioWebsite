@@ -1,19 +1,19 @@
 <template>
-  <v-container class="">
-    <div class="edusperience d-flex mt-5">
+  <v-container class="pt-0">
+    <div class="edusperience d-flex pt-4 justify-center">
       <div>
         <Education id="education"/>
       </div>
-      <v-divider class="divider my-9 "></v-divider>
+      <v-divider class="divider mt-8 mb-4 "></v-divider>
       <div>
-      <Experience id="experience"/>
+        <Experience id="experience"/>
       </div>
     </div>
     <v-divider class=" my-9 "></v-divider>
     <div>
-    <Certificates id="certificates"/>
+      <Certificates id="certificates"/>
     </div>
-    <v-divider class="my-9 "></v-divider>
+    <v-divider class="mt-8 "></v-divider>
   </v-container>
 </template>
 

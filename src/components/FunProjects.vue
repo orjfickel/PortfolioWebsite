@@ -65,7 +65,6 @@
   </div>
 
   <v-divider class="mt-8 "></v-divider>
-
 </v-container>
 </template>
 
