@@ -54,7 +54,7 @@
         <h2 class="projecttitle text-h4">Argus Kiesgame</h2>
         <v-responsive min-width="200"  class="text-justify">
           <span>A short satirical political voting guide in the form of a choose your own adventure game, in collaboration with the student paper Argus.
-            Mostly made as a fun exercise in learning Godot.</span>
+            Mostly made as a fun exercise in learning Godot. </span>
         </v-responsive>
         <Grade pagelink="https://argusutrecht.wordpress.com/argus-kiesgame/"></Grade>
       </v-col>
@@ -65,7 +65,6 @@
   </div>
 
   <v-divider class="mt-8 "></v-divider>
-
 </v-container>
 </template>
 

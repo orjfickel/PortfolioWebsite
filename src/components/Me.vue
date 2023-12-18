@@ -1,6 +1,8 @@
 <template>
 
-<div  class="bg-surface-variant mb-4">
+<div  class="mb-4" :style="{
+  background: $vuetify.theme.current.colors.header,
+  color: $vuetify.theme.current.colors.headertext}">
 <v-container class=" ">
     <div class="d-flex mt-5">
       <v-spacer ></v-spacer>

@@ -1,48 +1,15 @@
 <template>
   <Me id="home"/>
-  <TechnicalProjects id="technicalprojects"/>
-  <FunProjects id="funprojects"/>
-  <v-container class="">
-    <div class="edusperience d-flex">
-      <div>
-        <Education id="education"/>
-      </div>
-      <v-divider class="divider my-9 "></v-divider>
-      <div>
-      <Experience id="experience"/>
-      </div>
-    </div>
-    <v-divider class=" my-9 "></v-divider>
-    <div>
-    <Certificates id="certificates"/>
-    </div>
-    <v-divider class="my-9 "></v-divider>
+  <Projects/>
+  <!-- <CodeSample id="codesample"/>
+  <CV id="cv"/> -->
 
-  </v-container>
 </template>
 
 <script setup>
-  import HelloWorld from '@/components/HelloWorld.vue'
-  import TechnicalProjects from '@/components/TechnicalProjects.vue'
-  import FunProjects from '@/components/FunProjects.vue'
-  import Education from '@/components/Education.vue'
-  import Experience from '@/components/Experience.vue'
-  import Certificates from '@/components/Certificates.vue'
   import Me from '@/components/Me.vue'
+  import Projects from '@/views/Projects.vue'
+  import CodeSample from '@/views/CodeSample.vue'
+  import CV from '@/views/CV.vue'
 </script>
 
-<style scoped>
-.edusperience{
-    flex-flow: row;
-  }
-
-.divider { display: none; }
-
-@media (max-width: 960px) {
-  .divider { display: inline-block; }
-
-  .edusperience{
-    flex-flow: column;
-  }
-}
-</style>

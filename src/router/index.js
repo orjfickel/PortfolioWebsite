@@ -9,8 +9,23 @@ const routes = [
     children: [
       {
         path: '',
+        name: 'Default',
+        component: () => import('@/views/Home.vue'),
+      },
+      {
+        path: 'home',
         name: 'Home',
         component: () => import('@/views/Home.vue'),
+      },
+      {
+        path: 'cv',
+        name: 'CV',
+        component: () => import('@/views/CV.vue'),
+      },
+      {
+        path: 'codesample',
+        name: 'CodeSample',
+        component: () => import('@/views/CodeSample.vue'),
       },
       {
         path: 'projects/masterthesis',
