@@ -79,10 +79,11 @@
 
     <v-img src="@/assets/code/shade.png" />
 
-    <!-- On mobile the last image doesn't load sometimes, perhaps some padding would help -->
-    <div height="100" width="100" class="pa-1">
-      <span height="100" width="100" class="d-flex pa-1">  </span>
-    </div>
+    <v-divider class="my-8 "></v-divider>
+
+    <i> Code is licensed under the
+    <a rel="license" target="_blank" href="https://github.com/orjfickel/Small-Project-UV-Robot-Ray-Tracer/blob/main/LICENSE">MIT License</a>
+    </i>
 
     <v-divider class="mt-8 "></v-divider>
   </v-container>
