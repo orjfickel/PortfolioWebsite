@@ -73,9 +73,9 @@ export default {
       temporaryVar: false,
       sidebar: false,
       sections: [
-        { name: "Home", link: "/home/#home", icon: "mdi-home"},
-        { name: "Technical projects", link: "/home/#technicalprojects", icon: "mdi-wrench"},
-        { name: "Just-for-fun projects", link: "/home/#funprojects", icon: "mdi-star"},
+        { name: "Home", link: "/homepage/#home", icon: "mdi-home"},
+        { name: "Technical projects", link: "/homepage/#technicalprojects", icon: "mdi-wrench"},
+        { name: "Just-for-fun projects", link: "/homepage/#funprojects", icon: "mdi-star"},
         { name: "Code sample", link: "/codesample", icon: "mdi-code-braces"},
         { name: "Education", link: "/cv/#education", icon: "mdi-school"},
         { name: "Experience", link: "/cv/#experience", icon: "mdi-briefcase"},

@@ -1,9 +1,8 @@
 <template>
-  <Me id="home"/>
-  <Projects/>
-  <!-- <CodeSample id="codesample"/>
-  <CV id="cv"/> -->
-
+  <div id="home">
+    <Me/>
+    <Projects/>
+  </div>
 </template>
 
 <script setup>
