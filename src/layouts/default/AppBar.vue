@@ -24,7 +24,8 @@
     </v-navigation-drawer>
 
     <v-app-bar :style="{background: $vuetify.theme.current.colors.header,
-                        color: $vuetify.theme.current.colors.headertext}">
+                        color: $vuetify.theme.current.colors.headertext}"
+                scroll-behavior="hide">
       <v-btn class="pa-2" href="/">
         Oscar Fickel
       </v-btn>
