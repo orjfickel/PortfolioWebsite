@@ -25,7 +25,7 @@
 
     <v-app-bar :style="{background: $vuetify.theme.current.colors.header,
                         color: $vuetify.theme.current.colors.headertext}"
-                scroll-behavior="hide">
+                scroll-behavior="hide" scroll-threshold="10">
       <v-btn class="pa-2" href="/">
         Oscar Fickel
       </v-btn>
