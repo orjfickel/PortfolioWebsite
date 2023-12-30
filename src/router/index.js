@@ -4,6 +4,10 @@ import NotFound from "../views/404.vue";
 
 const routes = [
   {
+    path: '',
+    redirect: '/homepage',
+  },
+  {
     path: '/',
     component: () => import('@/layouts/default/Default.vue'),
     children: [

@@ -97,10 +97,4 @@
   margin-left: auto;
   margin-right: auto;
 }
-
-.v-container {
-  /* background-color: header; */
-  /* background-color: #a6b3be; */
-  /* color: black; */
-}
 </style>
