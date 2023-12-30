@@ -10,6 +10,9 @@
       <v-col cols="auto" md="" class="d-flex flex-column pb-0">
         <h2 class="projecttitle text-h4">Master’s Thesis: Blue Noise Distributed
         MCMC Decorrelation of ReSTIR</h2>
+
+        <Date date="2023"></Date>
+
         <div class="text-justify">
           <span class="">Reimplementing a paper on decorrelating ReSTIR
             via MCMC mutations and attempting to optimise it
@@ -40,8 +43,11 @@
           </video>
       </v-col>
       <v-col class=" pb-0 d-flex flex-column" cols="auto" md="">
-    <h2 class="projecttitle text-h4">Master’s Small Project: Ray tracing UV light
-  sterilization of hospital rooms</h2>
+        <h2 class="projecttitle text-h4">Master’s Small Project: Ray tracing UV light
+        sterilization of hospital rooms</h2>
+
+        <Date date="2022"></Date>
+
         <v-responsive min-width="200" class="text-justify">
           <span>Developing a program for ZorgSaam to show the
             effect of different UV lamp positions and durations
@@ -61,6 +67,9 @@
       <v-col cols="auto" md="" class="pb-0 d-flex flex-column">
         <h2 class="projecttitle text-h4">Bachelor’s Final Project: Applied Training
           Game Internationale Operaties</h2>
+
+        <Date date="2021"></Date>
+
         <div  class="text-justify">
           <span>Working in a team as Scrum master to develop
           a point-and-click training game in Unity, and accompanying
@@ -120,6 +129,7 @@
 
 <script setup>
   import Grade from '@/components/Grade.vue'
+  import Date from '@/components/Date.vue'
 
 </script>
 
@@ -141,13 +151,8 @@
   }
 </script>
 
-<style>
+<style scoped>
 .projecttitle{
-margin-bottom: 1em;
-}
-video {
-  height:100%;
-  width:500px;
-  object-fit: contain;
+margin-bottom: 0.6em;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <Slides pdfName="/SPSlides.pdf"/>
 
-  <v-container class="">
+  <v-container id="maintext" class="">
 
     <h2 class="projecttitle text-h4">Master’s Small Project: Ray tracing UV light
   sterilization of hospital rooms</h2>

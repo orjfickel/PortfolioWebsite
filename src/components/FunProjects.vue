@@ -8,7 +8,10 @@
   <div class="project">
     <v-row class="d-flex mb-auto">
       <v-col cols="auto" md="" class="pb-0 d-flex flex-column">
-    <h2 class="projecttitle text-h4">Minecraft Mod: Weaponized Baseball</h2>
+        <h2 class="projecttitle text-h4">Minecraft Mod: Weaponized Baseball</h2>
+
+        <Date date="2022"></Date>
+
         <v-responsive min-width="200">
           <span>A personal summer vacation project written in Java
             that introduces bouncy ball physics to Minecraft.</span>
@@ -37,7 +40,8 @@
         </v-card>
       </v-col>
       <v-col cols="auto" md="" class="pb-0 d-flex flex-column">
-    <h2 class="projecttitle text-h4">Portfolio Website</h2>
+        <h2 class="projecttitle text-h4">Portfolio Website</h2>
+        <Date date="2023"></Date>
         <v-responsive min-width="200"  class="text-justify">
           <span>A simple responsive website to showcase my portfolio, made with Vue</span>
         </v-responsive>
@@ -52,6 +56,7 @@
     <v-row class="d-flex mb-auto">
       <v-col cols="auto" md="" class="pb-0 d-flex flex-column">
         <h2 class="projecttitle text-h4">Argus Kiesgame</h2>
+        <Date date="2023"></Date>
         <v-responsive min-width="200"  class="text-justify">
           <span>A short satirical political voting guide in the form of a choose your own adventure game, in collaboration with the student paper Argus.
             Mostly made as a fun exercise in learning Godot. </span>
@@ -75,6 +80,7 @@
 
 <script setup>
   import Grade from '@/components/Grade.vue'
+  import Date from '@/components/Date.vue'
 
 </script>
 
@@ -95,13 +101,8 @@
   }
 </script>
 
-<style>
+<style scoped>
 .projecttitle{
-margin-bottom: 1em;
-}
-video {
-  height:100%;
-  width:500px;
-  object-fit: contain;
+margin-bottom: 0.6em;
 }
 </style>
