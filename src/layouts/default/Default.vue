@@ -23,17 +23,17 @@ export default {
     //check if browser supports dark mode.
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
       const store = useAppStore()
-      console.log(store.darkmode)
-      if (store.darkmode == 'default') {
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      if (store.darkmode != 'light') {
+        if (store.darkmode == 'dark') {
           useTheme().global.name.value = 'dark'
-          store.darkmode = true
+        } else {
+          if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            useTheme().global.name.value = 'dark'
+            store.darkmode = 'dark'
+          }
         }
-      } else if (store.darkmode == 'dark') {
-          useTheme().global.name.value = 'dark'
       }
     }
-
   },
 }
 </script>

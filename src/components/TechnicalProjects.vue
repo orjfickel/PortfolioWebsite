@@ -11,7 +11,7 @@
         <h2 class="projecttitle text-h4">Master’s Thesis: Blue Noise Distributed
         MCMC Decorrelation of ReSTIR</h2>
 
-        <Date date="2023"></Date>
+        <Date date="2023 (10 months)"></Date>
 
         <div class="text-justify">
           <span class="">Reimplementing a paper on decorrelating ReSTIR
@@ -46,13 +46,13 @@
         <h2 class="projecttitle text-h4">Master’s Small Project: Ray tracing UV light
         sterilization of hospital rooms</h2>
 
-        <Date date="2022"></Date>
+        <Date date="2022 (2 months)"></Date>
 
         <v-responsive min-width="200" class="text-justify">
           <span>Developing a program for ZorgSaam to show the
             effect of different UV lamp positions and durations
             on the UV doses received by surfaces in the room.
-            Written in C++ and GLSL, and using OpenCL.
+            Written in C++ and GLSL, using both OpenGL and OpenCL.
           </span>
         </v-responsive>
         <Grade grade="8.5" morelink="/projects/smallproject" codelink="https://github.com/orjfickel/Small-Project-UV-Robot-Ray-Tracer"></Grade>
@@ -68,7 +68,7 @@
         <h2 class="projecttitle text-h4">Bachelor’s Final Project: Applied Training
           Game Internationale Operaties</h2>
 
-        <Date date="2021"></Date>
+        <Date date="2021 (5 months)"></Date>
 
         <div  class="text-justify">
           <span>Working in a team as Scrum master to develop

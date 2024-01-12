@@ -21,12 +21,12 @@ export default createVuetify({
         colors: {
           primary: '#1867C0',
           secondary: '#E1592E',
-          // header: 'rgb(var(--v-theme-surface-variant))'
           background: '#f0f4f7',
           header: '#424242',
           headertext: '#f0f4f7',
           bodytext: '#000000',
           button: '#f0f4f7',
+          icon: '#757575',
         },
       },
       dark: {
@@ -34,11 +34,12 @@ export default createVuetify({
         colors: {
           primary: '#1867C0',
           secondary: '#E1592E',
+          background: '#0c1016',
           header: '#010408',
           headertext: '#f0f4f7',
           bodytext: '#f0f4f7',
           button: '#151a21',
-          background: '#0c1016',
+          icon: '#BDBDBD',
         },
       },
     },

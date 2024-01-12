@@ -1,4 +1,6 @@
 // Utilities
+import {watch} from 'vue'
+import pinia from '../store'
 import { defineStore } from 'pinia'
 
 export const useAppStore = defineStore('app', {
@@ -10,3 +12,13 @@ export const useAppStore = defineStore('app', {
     };
   },
 })
+
+export function watchStore () {
+  watch(
+    pinia.state,
+    (state) => {
+      localStorage.setItem("app", JSON.stringify(state.app));
+    },
+    { deep: true }
+    );
+}

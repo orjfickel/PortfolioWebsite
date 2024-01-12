@@ -8,8 +8,6 @@
 import vuetify from './vuetify'
 import pinia from '../store'
 import router from '../router'
-import {watch} from 'vue'
-
 
 export function registerPlugins (app) {
   app
@@ -17,11 +15,3 @@ export function registerPlugins (app) {
     .use(router)
     .use(pinia)
 }
-
-watch(
-  pinia.state,
-  (state) => {
-    localStorage.setItem("app", JSON.stringify(state.app));
-  },
-  { deep: true }
-  );
