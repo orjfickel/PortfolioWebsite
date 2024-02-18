@@ -33,6 +33,7 @@ in computer graphics and/or engine programming</span></div>
       </div>
       <div class="d-flex align-end mt-n1 mb-1">
           <v-chip
+            class="mr-2"
             color="primary"
             variant="elevated"
             href="mailto:oscarfickel@gmail.com"
@@ -43,7 +44,7 @@ in computer graphics and/or engine programming</span></div>
           </v-chip>
 
           <v-chip
-            class="mx-2"
+            class="mr-2"
             color="primary"
             variant="elevated"
             href="https://www.linkedin.com/in/oscar-fickel/"
@@ -54,6 +55,7 @@ in computer graphics and/or engine programming</span></div>
           </v-chip>
 
           <v-chip
+            class="mr-2"
             color="primary"
             variant="elevated"
             href="https://github.com/orjfickel/"
@@ -61,6 +63,16 @@ in computer graphics and/or engine programming</span></div>
           >
             <v-icon start icon="mdi-github"></v-icon>
             Github
+          </v-chip>
+
+          <v-chip
+            color="primary"
+            variant="elevated"
+            href="/OscarFickelCV.pdf"
+            target="_blank"
+          >
+            <v-icon start icon="mdi-file-document"></v-icon>
+            CV Overview
           </v-chip>
 
         </div>

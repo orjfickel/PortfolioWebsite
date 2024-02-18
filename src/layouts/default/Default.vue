@@ -20,17 +20,15 @@
 <script>
 export default {
   beforeMount () {
-    //check if browser supports dark mode.
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
-      const store = useAppStore()
-      if (store.darkmode != 'light') {
-        if (store.darkmode == 'dark') {
+    const store = useAppStore()
+    if (store.darkmode != 'light') {
+      if (store.darkmode == 'dark') {
+        useTheme().global.name.value = 'dark'
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
+        //check if browser supports dark mode.
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
           useTheme().global.name.value = 'dark'
-        } else {
-          if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            useTheme().global.name.value = 'dark'
-            store.darkmode = 'dark'
-          }
+          store.darkmode = 'dark'
         }
       }
     }
