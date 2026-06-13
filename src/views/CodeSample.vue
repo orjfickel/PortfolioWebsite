@@ -91,8 +91,8 @@
 
 <style scoped>
 .v-img{
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: 15px;
+  margin-bottom: 15px;
   min-width: 10px;
   margin-left: auto;
   margin-right: auto;

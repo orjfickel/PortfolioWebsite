@@ -1,7 +1,15 @@
 <template>
 
 <v-container class="">
-  <h1 class="text-h2 d-flex text-center justify-center">Just-For-Fun Projects</h1>
+  <h1 class="text-h2 d-flex text-center justify-center projecttitle">Hobby Projects</h1>
+
+  <v-row class="d-flex">
+    <v-col class="text-justify">
+      <span>The hobby projects meant more as fun endeavors. I mostly just like to show them off,
+        but it also reveals my strong motivation to flex both my creative and technical muscles outside of work and studies!
+      </span>
+    </v-col>
+  </v-row>
 
   <v-divider class="mt-8 mb-10 "></v-divider>
 
@@ -19,7 +27,7 @@
         <Grade pagelink="https://www.curseforge.com/minecraft/mc-mods/weaponized-baseball" codelink="https://github.com/orjfickel/Weaponized-Baseball-Mod"></Grade>
       </v-col>
       <v-col class="d-flex justify-center mx-auto pb-0">
-        <video autoplay loop muted class="video" style="width: 100%; height: 100%; min-width: 400px; max-width: 700px;" ref="video">
+        <video autoplay loop muted class="video" style="width: 100%; height: 100%; min-width: 200px; max-width: 700px;" ref="video">
             <source src="@/assets/BounceOffTheWall.mp4" type="video/mp4">
           </video>
       </v-col>
@@ -31,12 +39,12 @@
   <div class="project">
     <v-row class="d-flex mb-auto">
       <v-col class="d-flex justify-center mx-auto order-last order-md-first pb-0">
-        <v-sheet v-if="!inIframe()" class="d-flex" :elevation="2" border style="width: 100%; height: 330px; min-width: 400px; max-width: 700px;">
+        <v-sheet v-if="!inIframe()" class="d-flex" :elevation="2" border style="width: 100%; height: 330px; min-width: 200px; max-width: 700px;">
           <iframe class="w-100" src="https://oscar.fickel.nl/"></iframe>
         </v-sheet>
         <v-card v-else variant="tonal" class=" d-flex justify-center align-center text-center" width="500" height="200" align-center justify-center
         style="min-width: 200px;">
-          <v-card-body> Nice try, but no recursion allowed! </v-card-body>
+          <v-card-body> Sorry, no recursion allowed! </v-card-body>
         </v-card>
       </v-col>
       <v-col cols="auto" md="" class="pb-0 d-flex flex-column">
@@ -64,7 +72,7 @@
         <Grade pagelink="https://argusutrecht.wordpress.com/argus-kiesgame/"></Grade>
       </v-col>
       <v-col class="d-flex justify-center mx-auto pb-0">
-        <v-img min-width="400" max-width="700" src="@/assets/kiesgame.webp" />
+        <v-img min-width="200" max-width="700" src="@/assets/kiesgame.webp" />
       </v-col>
     </v-row>
   </div>
@@ -103,6 +111,6 @@
 
 <style scoped>
 .projecttitle{
-margin-bottom: 0.6em;
+margin-bottom: 30px;
 }
 </style>

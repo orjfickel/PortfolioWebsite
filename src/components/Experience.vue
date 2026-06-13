@@ -86,8 +86,4 @@ Research Committee’ of study association Sticky.</div>
 </template>
 
 <style>
-.projecttitle{
-margin-bottom: 1em;
-}
-
 </style>

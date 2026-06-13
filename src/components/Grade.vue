@@ -1,11 +1,11 @@
 <template>
-  <div class="d-flex mt-auto h-100 mb-1 ml-1 align-end">
-    <div class="d-flex mt-4">
-      <v-btn v-if="pagelink != null" color="button" target="_blank" :href="pagelink">Learn more</v-btn>
-      <v-btn v-else-if="morelink != null" color="button" @click="$router.push(morelink)">Learn more</v-btn>
-      <v-btn v-if="codelink != null" color="button" class="ml-4" target="_blank" :href="codelink">Source code</v-btn>
+  <div class="d-flex chips-container mt-auto h-100 mb-1 ml-1 align-end">
+    <div class="d-flex chips-container mt-4">
+      <v-btn v-if="pagelink != null" color="button" class="button" target="_blank" :href="pagelink">Learn more</v-btn>
+      <v-btn v-else-if="morelink != null" color="button" class="button" @click="$router.push(morelink)">Learn more</v-btn>
+      <v-btn v-if="codelink != null" color="button" class="button" target="_blank" :href="codelink">Source code</v-btn>
     </div>
-    <div v-if="grade != null" class="d-flex mt-auto ml-auto flex-column justify-center align-center text-center" max-width="100">
+    <div v-if="grade != null" class="grade-chip d-flex mt-auto  flex-column  align-center text-center" max-width="100">
       <v-progress-circular
         :rotate="360"
         :size="50"
@@ -29,3 +29,25 @@ export default {
   }
 }
 </script>
+
+<style>
+  .grade-chip{
+    margin: 12px;
+    margin-left: auto;
+  }
+  .button{
+    margin: 12px;
+  }
+  .chips-container{
+    flex-wrap: nowrap;
+  }
+@media (max-width: 504px){
+  .chips-container{
+    flex-wrap: wrap;
+    justify-content: center !important;
+  }
+  .grade-chip{
+    margin: 12px;
+  }
+}
+</style>

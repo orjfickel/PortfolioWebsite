@@ -20,14 +20,13 @@
           :title="item.name"
           :prepend-icon="item.icon"
           >
-
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
     <v-app-bar :style="{background: $vuetify.theme.current.colors.header}"
                 scroll-behavior="hide" scroll-threshold="10">
-      <v-btn class="px-5 ml-0 h-100" href="/" color="headertext">
+      <v-btn class="px-5 ml-0 h-100" href="/" title="Home" color="headertext">
         Oscar Fickel
       </v-btn>
 
@@ -45,9 +44,10 @@
           </div>
         </div>
 
-        <v-btn @click="toggleTheme" icon="mdi-brightness-6" class="ml-2" color="headertext"></v-btn>
+        <v-btn @click="toggleTheme" icon="mdi-brightness-6" title="Toggle dark/light mode" class="ml-2" color="headertext">
+        </v-btn>
 
-        <span class="dropdown">
+        <span class="dropdown" title="Navigation bar">
           <v-app-bar-nav-icon @click="sidebar = !sidebar" color="headertext">
           </v-app-bar-nav-icon>
         </span>
@@ -84,7 +84,7 @@ export default {
       sections: [
         { name: "Home", link: "/homepage/#home", icon: "mdi-home"},
         { name: "Technical projects", link: "/homepage/#technicalprojects", icon: "mdi-wrench"},
-        { name: "Just-for-fun projects", link: "/homepage/#funprojects", icon: "mdi-star"},
+        { name: "Hobby projects", link: "/homepage/#funprojects", icon: "mdi-star"},
         { name: "Code sample", link: "/codesample", icon: "mdi-code-braces"},
         { name: "Education", link: "/cv/#education", icon: "mdi-school"},
         { name: "Experience", link: "/cv/#experience", icon: "mdi-briefcase"},
@@ -96,9 +96,10 @@ export default {
 </script>
 
 <style scoped>
+
 .dropdown { display: none; }
 
-@media (max-width: 80em) {
+@media (max-width: 1280px) {
   .headerbuttons     { display: none; }
   .dropdown { display: inline-block; }
 }

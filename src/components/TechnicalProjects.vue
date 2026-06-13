@@ -1,7 +1,13 @@
 <template>
 
 <v-container class="">
-  <h1 class="text-h2 d-flex text-center justify-center">Technical Projects</h1>
+  <h1 class="text-h2 d-flex text-center justify-center projecttitle">Technical Projects</h1>
+
+  <v-row class="d-flex">
+    <v-col class="text-justify">
+      <span>The technically challenging projects that showcase my experience as a software developer</span>
+    </v-col>
+  </v-row>
 
   <v-divider class="mt-8 mb-10 "></v-divider>
 
@@ -25,7 +31,7 @@
         <Grade grade="8" morelink="/projects/masterthesis" codelink="https://git.science.uu.nl/vig/mscprojects/blue-noise-distributed-mcmc-decorrelation-of-restir"></Grade>
       </v-col>
       <v-col cols="auto" class="d-flex mx-auto justify-center pb-0">
-          <video controls="true" loop autoplay muted class="video" style="width: 100%; height: 100%; min-width: 400px; max-width: 440px;" ref="video">
+          <video controls="true" loop autoplay muted class="video" style="width: 100%; height: 100%; min-width: 200px; max-width: 500px;" ref="video">
             <source src="@/assets/ThesisDemo.mp4" type="video/mp4">
           </video>
       </v-col>
@@ -38,7 +44,7 @@
     <v-row class="d-flex mb-auto ">
       <v-col class="d-flex justify-center mx-auto order-last order-md-first pb-0">
         <video autoplay loop muted class="video"
-          style="z-index: 1; width: 100%; height: 100%; min-width: 400px; max-width: 700px;" ref="video">
+          style="z-index: 1; width: 100%; height: 100%; min-width: 200px; max-width: 700px;" ref="video">
             <source src="@/assets/RotatingDosageHeatmapSlower.mp4" type="video/mp4">
           </video>
       </v-col>
@@ -48,13 +54,13 @@
 
         <Date date="2022 (2 months)"></Date>
 
-        <v-responsive min-width="200" class="text-justify">
+        <div class="text-justify">
           <span>Developing a program for ZorgSaam to show the
             effect of different UV lamp positions and durations
             on the UV doses received by surfaces in the room.
             Written in C++ and GLSL, using both OpenGL and OpenCL.
           </span>
-        </v-responsive>
+        </div>
         <Grade grade="8.5" morelink="/projects/smallproject" codelink="https://github.com/orjfickel/Small-Project-UV-Robot-Ray-Tracer"></Grade>
       </v-col>
     </v-row>
@@ -70,7 +76,7 @@
 
         <Date date="2021 (5 months)"></Date>
 
-        <div  class="text-justify">
+        <div class="text-justify">
           <span>Working in a team as Scrum master to develop
           a point-and-click training game in Unity, and accompanying
           web-based scenario editor made with Vue, for the Politieacademie. <br>
@@ -80,10 +86,12 @@
         </div>
         <Grade grade="8.5" pagelink="https://softwareprojecten.sites.uu.nl/2021/07/29/applied-training-game-internationale-operaties-sequel/" ></Grade>
       </v-col>
-      <v-col cols="auto" class="d-flex mx-auto justify-center align-center pb-0">
-        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/YrXMOzlAu_Q?si=npIBIsQq9Di3ff9f"
-          title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
-          gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <v-col class="d-flex mx-auto justify-center align-center pb-0">
+        <div class="youtube-wrapper">
+          <iframe src="https://www.youtube-nocookie.com/embed/YrXMOzlAu_Q?si=npIBIsQq9Di3ff9f"
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+            gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
       </v-col>
     </v-row>
   </div>
@@ -153,6 +161,19 @@
 
 <style scoped>
 .projecttitle{
-margin-bottom: 0.6em;
+  margin-bottom: 30px;
+}
+
+.youtube-wrapper {
+  z-index: 1;
+  width: 100%;
+  min-width: 200px;
+  max-width: 700px;
+  aspect-ratio: 16 / 9;
+}
+
+.youtube-wrapper iframe {
+  width: 100%;
+  height: 100%;
 }
 </style>

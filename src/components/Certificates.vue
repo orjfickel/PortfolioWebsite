@@ -37,8 +37,4 @@
 </template>
 
 <style>
-.projecttitle{
-margin-bottom: 1em;
-}
-
 </style>

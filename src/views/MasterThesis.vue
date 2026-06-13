@@ -27,7 +27,7 @@ The effects of this were marginal, but I was able provide reasoning as to how, i
 </span>
       </v-col>
       <v-col class="d-flex justify-center">
-          <video controls="true" class="video" height="400" ref="video">
+          <video controls="true" class="video" style="z-index: 1; width: 100%; height: 100%; min-width: 200px; max-width: 700px;" ref="video">
             <source src="@/assets/ThesisDemo.mp4" type="video/mp4">
           </video>
       </v-col>

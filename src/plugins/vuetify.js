@@ -22,7 +22,7 @@ export default createVuetify({
           primary: '#1867C0',
           secondary: '#E1592E',
           background: '#f0f4f7',
-          header: '#424242',
+          header: '#323c42',
           headertext: '#f0f4f7',
           bodytext: '#000000',
           button: '#f0f4f7',
