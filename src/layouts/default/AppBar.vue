@@ -24,8 +24,9 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar :style="{background: $vuetify.theme.current.colors.header}"
-                scroll-behavior="hide" scroll-threshold="10">
+    <v-app-bar ref="appBarRef" fixed class="fixed-bar"
+                :style="[ { background: $vuetify.theme.current.colors.header }, appBarStyles ]"
+                >
       <v-btn class="px-5 ml-0 h-100" href="/" title="Home" color="headertext">
         Oscar Fickel
       </v-btn>
@@ -57,15 +58,72 @@
 </template>
 
 <script setup>
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { useTheme } from 'vuetify'
 import { useAppStore } from '@/store/app'
-import { useDisplay } from 'vuetify'
-
-const { mdAndDown} = useDisplay()
 
 const store = useAppStore()
-
 const theme = useTheme()
+
+const appBarRef = ref(null)
+const appBarHeight = ref(80)
+const appBarMarginTop = ref(0)
+const lastScrollY = ref(0)
+const lastToggleYUp = ref(0)
+const lastToggleYDown = ref(0)
+
+const appBarStyles = computed(() => ({
+  marginTop: `${appBarMarginTop.value}px`
+}))
+
+function measureAppBarHeight() {
+  const element = appBarRef.value?.$el ?? appBarRef.value
+  appBarHeight.value = element?.offsetHeight ?? 80
+}
+
+function updateAppBarMargin(currentY) {
+  const delta = currentY - lastScrollY.value
+  if(delta > 0){
+    const diff = currentY - lastToggleYDown.value;
+    appBarMarginTop.value = Math.max(-appBarHeight.value, Math.min(0, -diff));
+  } else{
+    const diff = currentY - lastToggleYUp.value;
+    appBarMarginTop.value = Math.max(-appBarHeight.value, Math.min(0, -diff));
+  }
+}
+
+function handleScroll() {
+  const currentY = window.scrollY
+  const delta = currentY - lastScrollY.value
+
+  if (Math.abs(delta) < 5) {
+    return
+  }
+
+  if (delta > 0){
+    if (currentY - lastToggleYDown.value > 0) {
+      lastToggleYUp.value = Math.max(currentY - appBarHeight.value, lastToggleYDown.value)
+    }
+  } else {
+    if (lastToggleYUp.value - currentY > 0) {
+      lastToggleYDown.value = currentY
+    }
+  }
+  updateAppBarMargin(currentY)
+  lastScrollY.value = currentY;
+}
+
+onMounted(() => {
+  lastScrollY.value = window.scrollY
+  measureAppBarHeight()
+  window.addEventListener('scroll', handleScroll, { passive: true })
+  window.addEventListener('resize', measureAppBarHeight)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('resize', measureAppBarHeight)
+})
 
 function toggleTheme () {
   store.darkmode = theme.global.current.value.dark ? 'light' : 'dark'
@@ -102,6 +160,10 @@ export default {
 @media (max-width: 1280px) {
   .headerbuttons     { display: none; }
   .dropdown { display: inline-block; }
+}
+
+.fixed-bar {
+  will-change: margin-top;
 }
 
 .navbar {
