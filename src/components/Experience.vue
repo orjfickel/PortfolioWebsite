@@ -1,6 +1,6 @@
 <template>
 <div class="pt-4">
-  <h1 class="text-h2 d-flex justify-center">Experience</h1>
+  <h1 class="text-h3 font-weight-light d-flex justify-center">Experience</h1>
   <v-divider class=" my-8 "></v-divider>
   <v-timeline side="end" align="start"
   >

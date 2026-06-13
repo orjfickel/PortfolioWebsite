@@ -20,7 +20,7 @@
               Simulation software developer at InControl, with a background in Game & Media Technology.
               <br>
               <br>
-              Note: website content was last updated on 18-02-2024.
+              Note: website content was last updated on februari 2024.
             </span>
           <!-- <span
           >Recently graduated with a Master’s degree in Computer Science
@@ -86,7 +86,6 @@ in computer graphics and/or engine programming</span> -->
     </div>
 </v-container>
 </div>
-<!-- <v-divider class=" my-9 "></v-divider> -->
 </template>
 
 <script setup>

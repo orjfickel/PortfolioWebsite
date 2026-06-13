@@ -117,12 +117,10 @@ onMounted(() => {
   lastScrollY.value = window.scrollY
   measureAppBarHeight()
   window.addEventListener('scroll', handleScroll, { passive: true })
-  window.addEventListener('resize', measureAppBarHeight)
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll)
-  window.removeEventListener('resize', measureAppBarHeight)
 })
 
 function toggleTheme () {

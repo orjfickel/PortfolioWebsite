@@ -1,6 +1,6 @@
 <template>
   <v-container class="pt-8">
-    <h1 class="text-h2 d-flex text-center justify-center">Code sample</h1>
+    <h1 class="text-h3 font-weight-light d-flex text-center justify-center">Code sample</h1>
 
     <v-divider class="mt-8 mb-10 "></v-divider>
 

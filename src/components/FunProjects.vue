@@ -1,7 +1,7 @@
 <template>
 
 <v-container class="">
-  <h1 class="text-h2 d-flex text-center justify-center projecttitle">Hobby Projects</h1>
+  <h1 class="text-h3 font-weight-light d-flex text-center justify-center projecttitle">Hobby Projects</h1>
 
   <v-row class="d-flex">
     <v-col class="d-flex text-justify justify-center">
