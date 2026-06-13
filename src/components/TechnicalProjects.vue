@@ -4,7 +4,7 @@
   <h1 class="text-h2 d-flex text-center justify-center projecttitle">Technical Projects</h1>
 
   <v-row class="d-flex">
-    <v-col class="text-justify">
+    <v-col class="d-flex text-justify justify-center">
       <span>The technically challenging projects that showcase my experience as a software developer</span>
     </v-col>
   </v-row>
@@ -101,7 +101,7 @@
   <div class="project">
     <h2 class="projecttitle text-h4">Miscellaneous Master Course Projects</h2>
     <v-row class="d-flex mb-auto">
-      <v-col class="text-justify">
+      <v-col class="d-flex text-justify justify-center">
         <span>Some examples of the smaller projects that were the by-products of following courses for the Game and Media Technology Master's programme</span>
       </v-col>
     </v-row>

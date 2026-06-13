@@ -16,11 +16,18 @@
           <div
           class="mr-auto text-justify"
             >
-          <span
+            <span>
+              Simulation software developer at InControl, with a background in Game & Media Technology.
+              <br>
+              <br>
+              Note: website content was last updated 18-02-2024.
+            </span>
+          <!-- <span
           >Recently graduated with a Master’s degree in Computer Science
 (Game and Media Technology). I have spent the last year of my
 master’s focused on ray tracing, and hope to continue specialising
-in computer graphics and/or engine programming</span></div>
+in computer graphics and/or engine programming</span> -->
+</div>
 
         </div>
 
@@ -31,9 +38,8 @@ in computer graphics and/or engine programming</span></div>
           </v-avatar>
         </div>
       </div>
-      <div class="d-flex align-end mt-n1 mb-1" style="flex-wrap: wrap; gap: 10px;">
+      <div class="chips-container d-flex align-end mt-n1 mb-1" style=" gap: 10px;">
           <v-chip
-            class="mr-2"
             color="primary"
             variant="elevated"
             href="mailto:oscarfickel@gmail.com"
@@ -44,7 +50,6 @@ in computer graphics and/or engine programming</span></div>
           </v-chip>
 
           <v-chip
-            class="mr-2"
             color="primary"
             variant="elevated"
             href="https://www.linkedin.com/in/oscar-fickel/"
@@ -55,7 +60,6 @@ in computer graphics and/or engine programming</span></div>
           </v-chip>
 
           <v-chip
-            class="mr-2"
             color="primary"
             variant="elevated"
             href="https://github.com/orjfickel/"
@@ -72,7 +76,7 @@ in computer graphics and/or engine programming</span></div>
             target="_blank"
           >
             <v-icon start icon="mdi-file-document"></v-icon>
-            CV Overview
+            CV (outdated)
           </v-chip>
 
         </div>
@@ -141,6 +145,10 @@ onUnmounted(() => {
   justify-content: flex-end;
   margin-left: auto;
 }
+.chips-container{
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
 
 @media (max-width: 504px){
   .me-header{
@@ -162,6 +170,10 @@ onUnmounted(() => {
   }
   .me-avatar-container .v-avatar{
     margin-left: 0 !important;
+  }
+  .chips-container{
+    flex-wrap: wrap;
+    justify-content: center !important;
   }
 }
 </style>
