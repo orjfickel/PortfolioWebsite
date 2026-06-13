@@ -27,17 +27,29 @@ The effects of this were marginal, but I was able provide reasoning as to how, i
 </span>
       </v-col>
       <v-col class="d-flex justify-center">
-          <video controls="true" class="video" style="z-index: 1; width: 100%; height: 100%; min-width: 200px; max-width: 700px;" ref="video">
+        <div v-if="showThesisDemoVideo" class="video-wrapper">
+          <video controls="true" autoplay loop muted onclick="this.paused ? this.play() : this.pause()"
+            class="video-gif" style="z-index: 1; width: 100%; height: 100%; min-width: 200px; max-width: 500px;" ref="video">
             <source src="@/assets/ThesisDemo.mp4" type="video/mp4">
           </video>
+        </div>
+        <div v-else class="video-poster" @click="showThesisDemoVideo = true">
+          <img src="@/assets/ThesisDemoScreenshot.jpg" alt="Thesis demo screenshot" />
+          <div class="poster-overlay">
+            <span class="poster-play">▶</span>
+            <span>Click to load video</span>
+          </div>
+        </div>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import Slides from '@/components/Slides.vue'
 
+const showThesisDemoVideo = ref(false)
 </script>
 
 
@@ -61,5 +73,35 @@ input[type='number']::-webkit-outer-spin-button {
   margin: 0;
 }
 
+.video-poster, .video-wrapper {
+  width: 100%;
+  min-width: 200px;
+  max-width: 500px;
+  position: relative;
+  cursor: pointer;
+}
+
+.video-poster img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.poster-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: white;
+  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.25);
+}
+
+.poster-play {
+  font-size: 2.5rem;
+}
 
 </style>

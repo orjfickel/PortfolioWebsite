@@ -27,7 +27,7 @@
         <Grade pagelink="https://www.curseforge.com/minecraft/mc-mods/weaponized-baseball" codelink="https://github.com/orjfickel/Weaponized-Baseball-Mod"></Grade>
       </v-col>
       <v-col class="d-flex justify-center mx-auto pb-0">
-        <video autoplay loop muted class="video" style="width: 100%; height: 100%; min-width: 200px; max-width: 700px;" ref="video">
+        <video autoplay loop muted onclick="this.paused ? this.play() : this.pause()" class="video" style="width: 100%; height: 100%; min-width: 200px; max-width: 700px;" ref="video">
             <source src="@/assets/BounceOffTheWall.mp4" type="video/mp4">
           </video>
       </v-col>

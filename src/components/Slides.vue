@@ -1,17 +1,15 @@
 <template>
   <v-responsive class="mx-auto d-flex justify-center align-center"
+    :max-height="Math.min(windowWidth * (9.0 / 16.0), slidesHeight)"
+    :max-width="Math.min(windowWidth, slidesHeight * (16.0 / 9.0))">
 
-  :max-height="Math.min(windowWidth * (9.0 / 16.0), slidesHeight)"
-  :max-width="Math.min(windowWidth, slidesHeight * (16.0 / 9.0))">
-
-
-  <v-responsive :max-height="Math.min(windowWidth * (9.0 / 16.0), slidesHeight)" class="d-flex justify-center mx-auto" v-if="props.pdfName == '../SPSlides.pdf' && (page == 9 || page==12)">
-    <video autoplay loop muted class="video" style="width: 100%; height: 100%;" ref="video">
-      <source v-if="page==9" src="@/assets/RotatingDosageHeatmapSlower.mp4" type="video/mp4">
-      <source v-if="page==12" src="@/assets/MovingLightPosition.mp4" type="video/mp4">
-    </video>
-  </v-responsive>
-  <VuePDF v-else class="pt-n6" :pdf="pdf" :page="page" fit-parent :key="fit" />
+    <v-responsive :max-height="Math.min(windowWidth * (9.0 / 16.0), slidesHeight)" class="d-flex justify-center mx-auto" v-if="props.pdfName == '/SPSlides.pdf' && (page == 9 || page==12)">
+      <video autoplay loop muted onclick="this.paused ? this.play() : this.pause()" class="video" style="width: 100%; height: 100%;" ref="video">
+        <source v-if="page==9" src="@/assets/RotatingDosageHeatmapSlower.mp4" type="video/mp4">
+        <source v-if="page==12" src="@/assets/MovingLightPosition.mp4" type="video/mp4">
+      </video>
+    </v-responsive>
+    <VuePDF v-else class="pt-n6" :pdf="pdf" :page="page" fit-parent :key="fit" />
   </v-responsive>
 
   <v-responsive class="mb-2 mt-1 mx-auto d-flex justify-center align-center"

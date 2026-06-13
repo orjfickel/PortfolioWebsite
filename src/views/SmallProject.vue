@@ -22,8 +22,11 @@ spread out in the room.
 
 </span>
       </v-col>
-      <v-col class="d-flex justify-center align-start">
-        <v-img max-height="400" src="@/assets/RotatingDosageHeatmapSlower.gif" />
+      <v-col class="d-flex justify-center align-start mb-auto">
+        <video autoplay loop muted class="video-gif" onclick="this.paused ? this.play() : this.pause()"
+          style="z-index: 1; width: 100%; height: 100%; min-width: 200px; max-width: 700px;" ref="video">
+            <source src="@/assets/RotatingDosageHeatmapSlower.mp4" type="video/mp4">
+          </video>
       </v-col>
     </v-row>
   </v-container>

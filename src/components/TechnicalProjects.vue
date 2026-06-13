@@ -31,9 +31,10 @@
         <Grade grade="8" morelink="/projects/masterthesis" codelink="https://git.science.uu.nl/vig/mscprojects/blue-noise-distributed-mcmc-decorrelation-of-restir"></Grade>
       </v-col>
       <v-col cols="auto" class="d-flex mx-auto justify-center pb-0">
-          <video controls="true" loop autoplay muted class="video" style="width: 100%; height: 100%; min-width: 200px; max-width: 500px;" ref="video">
-            <source src="@/assets/ThesisDemo.mp4" type="video/mp4">
-          </video>
+        <video autoplay loop muted onclick="this.paused ? this.play() : this.pause()"
+          class="video-gif" style="width: 100%; height: 100%; min-width: 200px; max-width: 500px;" ref="video">
+          <source src="@/assets/ThesisDemoShort.mp4" type="video/mp4">
+        </video>
       </v-col>
     </v-row>
   </div>
@@ -43,7 +44,7 @@
   <div class="project">
     <v-row class="d-flex mb-auto ">
       <v-col class="d-flex justify-center mx-auto order-last order-md-first pb-0">
-        <video autoplay loop muted class="video"
+        <video autoplay loop muted class="video-gif" onclick="this.paused ? this.play() : this.pause()"
           style="z-index: 1; width: 100%; height: 100%; min-width: 200px; max-width: 700px;" ref="video">
             <source src="@/assets/RotatingDosageHeatmapSlower.mp4" type="video/mp4">
           </video>
@@ -136,8 +137,9 @@
 </template>
 
 <script setup>
-  import Grade from '@/components/Grade.vue'
-  import Date from '@/components/Date.vue'
+import { ref } from 'vue'
+import Grade from '@/components/Grade.vue'
+import Date from '@/components/Date.vue'
 
 </script>
 
