@@ -3,42 +3,45 @@
 <div  class="mb-4" :style="{
   background: $vuetify.theme.current.colors.header,
   color: $vuetify.theme.current.colors.headertext}">
-<v-container class=" ">
+  <v-container class=" ">
     <div v-if="isExtraSmallPhone" class="text-justify"><span>Okay now you're being ridiculous, no one has a phone this small!</span></div>
     <div v-if="isExtraWide" class="text-justify"><span>Okay now you're being ridiculous, can you even read this??</span></div>
     <div class="d-flex mt-5">
       <v-spacer ></v-spacer>
       <div class="d-flex flex-column">
-      <div class="d-flex me-header">
-        <div class="me-text mb-4 mr-auto">
-          <h2 class="me-text-title d-flex text-h4 mb-4">About me</h2>
+        <div class="d-flex me-header align-center">
+          <div class="me-text mb-4 mr-auto">
+            <h2 class="me-text-title d-flex text-h4 mb-4">About me</h2>
 
-          <div
-          class="mr-auto text-justify"
-            >
-            <span>
-              Simulation software developer at InControl, with a background in Game & Media Technology.
-              <br>
-              <br>
-              Note: website content was last updated on februari 2024.
-            </span>
-          <!-- <span
-          >Recently graduated with a Master’s degree in Computer Science
-(Game and Media Technology). I have spent the last year of my
-master’s focused on ray tracing, and hope to continue specialising
-in computer graphics and/or engine programming</span> -->
-</div>
+            <div
+            class="mr-auto text-justify"
+              >
+              <span>
+                Simulation software developer at InControl, with a background in Game & Media Technology.
+                <br>
+                <br>
+                Thank you for your interest! Feel free to have a look around, and send me an e-mail if it inspires any questions :)
+                <br>
+                <br>
+                Note: website content was last updated on februari 2024.
+              </span>
+            <!-- <span
+                      >Recently graduated with a Master’s degree in Computer Science
+            (Game and Media Technology). I have spent the last year of my
+            master’s focused on ray tracing, and hope to continue specialising
+            in computer graphics and/or engine programming</span> -->
+            </div>
 
+          </div>
+
+          <div class="me-avatar-container d-flex align-center justify-end ml-auto mb-3 mt-3"
+          >
+            <v-avatar size="160px" variant="elevated"  class="ml-3 my-auto">
+              <v-img height="200" src="@/assets/face.jpg" />
+            </v-avatar>
+          </div>
         </div>
-
-        <div class="me-avatar-container d-flex justify-end ml-auto mb-3 mt-3"
-        >
-          <v-avatar size="160px" variant="elevated"  class="ml-3 my-auto">
-            <v-img height="200" src="@/assets/face.jpg" />
-          </v-avatar>
-        </div>
-      </div>
-      <div class="chips-container d-flex align-end mt-n1 mb-1" style=" gap: 10px;">
+        <div class="chips-container d-flex align-end mt-n1 mb-1" style=" gap: 10px;">
           <v-chip
             color="primary"
             variant="elevated"
@@ -84,7 +87,7 @@ in computer graphics and/or engine programming</span> -->
 
       <v-spacer ></v-spacer>
     </div>
-</v-container>
+  </v-container>
 </div>
 </template>
 

@@ -43,11 +43,12 @@
     <v-btn
     v-show="slidesHeight * (16.0 / 9.0) < windowWidth && windowTop == 0"
     class="ma-1"
+    color="grey-darken-3"
     icon
     elevation="0"
     @click="$router.push('#maintext')"
   >
-      <v-icon color="grey-darken-2" icon="mdi-arrow-down-bold" size="x-large"></v-icon>
+      <v-icon color="grey-lighten-1" icon="mdi-arrow-down-bold" size="x-large"></v-icon>
   </v-btn>
 
   </v-responsive>
@@ -94,10 +95,6 @@ export default {
       this.windowWidth = window.innerWidth;
     },
     onScroll () {
-      // console.log('scrolltop ' + scrollTop)
-      // console.log('clientHeight ' + clientHeight)
-      // console.log('scrollHeight ' + scrollHeight)
-      console.log('window.top.scrollY ' + window.top.scrollY)
       this.windowTop = window.top.scrollY
     }
   }

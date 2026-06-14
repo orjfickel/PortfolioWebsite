@@ -69,8 +69,9 @@ const appBarRef = ref(null)
 const appBarHeight = ref(80)
 const appBarMarginTop = ref(0)
 const lastScrollY = ref(0)
-const lastToggleYUp = ref(0)
-const lastToggleYDown = ref(0)
+const lastToggleY = ref(0)
+const toggleUpThreshold = 100
+const toggledUp = ref(true)
 
 const appBarStyles = computed(() => ({
   marginTop: `${appBarMarginTop.value}px`
@@ -81,35 +82,33 @@ function measureAppBarHeight() {
   appBarHeight.value = element?.offsetHeight ?? 80
 }
 
-function updateAppBarMargin(currentY) {
-  const delta = currentY - lastScrollY.value
+function updateAppBarMargin(currentY, delta) {
+  let newMargin = 0
+  const diff = currentY - lastToggleY.value;
   if(delta > 0){
-    const diff = currentY - lastToggleYDown.value;
-    appBarMarginTop.value = Math.max(-appBarHeight.value, Math.min(0, -diff));
-  } else{
-    const diff = currentY - lastToggleYUp.value;
-    appBarMarginTop.value = Math.max(-appBarHeight.value, Math.min(0, -diff));
+    newMargin = Math.max(-appBarHeight.value, Math.min(0, -diff));
+  } else if (delta < 0){
+    newMargin = Math.max(-appBarHeight.value, Math.min(0, -diff));
+  }
+
+  if (newMargin !== appBarMarginTop.value) {
+    appBarMarginTop.value = newMargin
   }
 }
+
 
 function handleScroll() {
   const currentY = window.scrollY
   const delta = currentY - lastScrollY.value
 
-  if (Math.abs(delta) < 5) {
-    return
+  if (delta > 0 && toggledUp.value){
+      toggledUp.value = false;
+      lastToggleY.value = Math.min(currentY, lastToggleY.value)
+  } else if(!toggledUp.value){
+      toggledUp.value = true;
+      lastToggleY.value = Math.max(currentY - appBarHeight.value - toggleUpThreshold, lastToggleY.value)
   }
-
-  if (delta > 0){
-    if (currentY - lastToggleYDown.value > 0) {
-      lastToggleYUp.value = Math.max(currentY - appBarHeight.value, lastToggleYDown.value)
-    }
-  } else {
-    if (lastToggleYUp.value - currentY > 0) {
-      lastToggleYDown.value = currentY
-    }
-  }
-  updateAppBarMargin(currentY)
+  updateAppBarMargin(currentY, delta)
   lastScrollY.value = currentY;
 }
 
