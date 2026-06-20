@@ -20,7 +20,7 @@
                 Simulation software developer at InControl, with a background in Game & Media Technology.
                 <br>
                 <br>
-                Thank you for your interest! Feel free to have a look around, and send me an e-mail if it inspires any questions :)
+                Thank you for your interest! Feel free to have a look around, and be sure to send me an email if it inspires any questions
                 <br>
                 <br>
                 Note: website content was last updated on februari 2024.
@@ -49,7 +49,7 @@
             target="_blank"
           >
             <v-icon start icon="mdi-email"></v-icon>
-            E-mail
+            email
           </v-chip>
 
           <v-chip

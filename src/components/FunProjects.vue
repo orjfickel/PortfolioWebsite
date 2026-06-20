@@ -5,8 +5,7 @@
 
   <v-row class="d-flex">
     <v-col class="d-flex text-justify justify-center">
-      <span>The hobby projects meant more as fun endeavors. I mostly just like to show them off,
-        but it also reveals my strong motivation to flex both my creative and technical muscles outside of work and studies!
+      <span>These showcase less my technical skills, and are more fun endeavors that display my creativity and drive to pursue different kinds of projects!
       </span>
     </v-col>
   </v-row>
