@@ -36,8 +36,14 @@
 
           <div class="me-avatar-container d-flex align-center justify-end ml-auto mb-3 mt-3"
           >
-            <v-avatar size="160px" variant="elevated"  class="ml-3 my-auto">
+            <v-avatar v-show="ouch" size="160px" variant="elevated" @mousedown="ouch = true" @mouseup="ouch = false" class="ml-3 my-auto">
+              <v-img height="200" src="@/assets/facepinch.jpg" />
+            </v-avatar>
+            <v-avatar v-show="!ouch && !bright" size="160px" variant="elevated" @mousedown="ouch = true" @mouseup="ouch = false" class="ml-3 my-auto">
               <v-img height="200" src="@/assets/face.jpg" />
+            </v-avatar>
+            <v-avatar v-show="!ouch && bright" size="160px" variant="elevated" @mousedown="ouch = true" @mouseup="ouch = false" class="ml-3 my-auto">
+              <v-img height="200" src="@/assets/facebright.jpg" />
             </v-avatar>
           </div>
         </div>
@@ -49,7 +55,7 @@
             target="_blank"
           >
             <v-icon start icon="mdi-email"></v-icon>
-            email
+            Email
           </v-chip>
 
           <v-chip
@@ -92,7 +98,18 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { useTheme } from 'vuetify'
+
+const ouch = ref(false) // To show a pinched face when pressing avatar
+const bright = ref(false) // To show an eyes widened face when switching to light mode
+
+watch(useTheme().global.name, async (newMode, oldMode) => {
+  if(newMode == 'light' && oldMode == 'dark'){
+    bright.value = true;
+    setTimeout(() => {bright.value = false}, 1000);
+  }
+})
 
 const isExtraSmallPhone = ref(false)
 const isExtraWide = ref(false)
