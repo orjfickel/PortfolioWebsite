@@ -31,6 +31,20 @@ export default createVuetify({
       },
       dark: {
         dark: true,
+        variables: {
+          'border-color': '#000000',
+          'border-opacity': 0.12,
+          'high-emphasis-opacity': 0.87,
+          'medium-emphasis-opacity': 0.60,
+          'disabled-opacity': 0.38,
+          'idle-opacity': 0.08,
+          'hover-opacity': 0.08,
+          'focus-opacity': 0.12,
+          'selected-opacity': 0.08,
+          'activated-opacity': 0.12,
+          'pressed-opacity': 0.12,
+          'dragged-opacity': 0.08,
+        },
         colors: {
           primary: '#1867C0',
           secondary: '#E1592E',

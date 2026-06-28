@@ -1,9 +1,11 @@
 <template>
   <v-div>
+    <!-- The navigation drawer to the side of the screen if small enough -->
     <v-navigation-drawer :style="{background: $vuetify.theme.current.colors.header}"
         temporary v-model="sidebar" app location="right"
         >
       <v-list>
+        <!-- Drawer icon at the top -->
         <v-list-item
           key="drawer"
           @click="sidebar = false"
@@ -12,15 +14,59 @@
           >
 
         </v-list-item>
-        <v-list-item
-          v-for="item in sections"
-          :key="item.name"
-          base-color="headertext"
-          :to="item.link"
-          :title="item.name"
-          :prepend-icon="item.icon"
+        <template v-for="section in sections" :key="section.name">
+          <!-- If this section doesn't have subpages, just show a button that links to the section page -->
+          <v-list-item
+            v-if="!section.subpages || !section.subpages.length"
+            base-color="headertext"
+            :to="section.link"
+            :title="section.name"
+            :prepend-icon="section.icon"
+            @click="sidebar = false"
+            class="drawer-item"
           >
-        </v-list-item>
+          </v-list-item>
+
+          <!-- Show a section button that toggles a dropdown -->
+          <v-list-group v-else :value="section.name" base-color="headertext">
+            <template v-slot:activator="{ props }">
+              <v-list-item
+                v-bind="props"
+                base-color="headertext"
+                :title="section.name"
+                :prepend-icon="section.icon"
+                :class="{ 'v-list-item--active': isSectionActive(section) }"
+                class="drawer-item"
+              >
+              </v-list-item>
+            </template>
+
+            <!-- Show as the first item in the dropdown a link to the main page of the section -->
+            <router-link :to="section.link"  class="routerLink">
+              <v-list-item
+                base-color="headertext"
+                :title="section.name + ' overview'"
+                @click="sidebar = false"
+                class="drawer-item"
+                :class="{ 'v-list-item--active': isSectionActive(section) }"
+              >
+              </v-list-item>
+            </router-link >
+            <v-list-item
+              v-for="subpage in section.subpages"
+              :key="subpage.title"
+              base-color="headertext"
+              :to="subpage.external ? undefined : subpage.link"
+              :href="subpage.external ? subpage.link : undefined"
+              :target="subpage.external ? '_blank' : undefined"
+              rel="noreferrer"
+              :title="subpage.title"
+              @click="sidebar = false"
+              class="drawer-item"
+            >
+            </v-list-item>
+          </v-list-group>
+        </template>
       </v-list>
     </v-navigation-drawer>
 
@@ -33,15 +79,66 @@
 
       <template v-slot:append>
         <div class="headerbuttons h-100">
-          <div class="d-flex h-100">
-            <v-list-item
-              v-for="section in sections"
-              :key="section.name"
-              class="headerbutton pl-3 pr-4"
-              base-color="headertext"
-              :to="section.link">
-              <v-icon :icon="section.icon" class="mr-1" color="grey-lighten-1"></v-icon> {{ section.name }}
-            </v-list-item>
+          <div class="d-flex h-100 ml-auto">
+            <template v-for="section in sections" :key="section.name">
+              <!-- If this section has subpages, show a section button that toggles a menu dropdown -->
+              <v-list-item
+                v-if="section.subpages && section.subpages.length"
+                :key="section.name"
+                class="headerbutton px-0"
+                base-color="headertext"
+                link
+                :class="{ 'v-list-item--active': isSectionActive(section) }"
+              >
+                <v-menu
+                  :model-value="isMenuOpen(section.name)"
+                  :open-on-hover="true"
+                  :close-on-content-click="true"
+                  @update:model-value="value => setMenuOpen(section.name, value)"
+                >
+                  <template v-slot:activator="{ props }">
+                    <div v-bind="props" class="section-trigger">
+                      <v-icon :icon="section.icon" class="mr-1" color="grey-lighten-1"></v-icon>
+                      {{ section.name }}
+                    </div>
+                  </template>
+                  <v-list>
+                    <!-- Show as the first item in the dropdown a link to the main page of the section -->
+                    <v-list-item
+                      base-color="headertext"
+                      :to="section.link"
+                      :title="section.name + ' overview'"
+                      @click="sidebar = false"
+                    >
+                    </v-list-item>
+                    <v-list-item
+                      v-for="subpage in section.subpages"
+                      :key="subpage.title"
+                      :value="subpage.title"
+                      :to="subpage.external ? undefined : subpage.link"
+                      :href="subpage.external ? subpage.link : undefined"
+                      :target="subpage.external ? '_blank' : undefined"
+                      rel="noreferrer"
+                    >
+                      <v-list-item-title>{{ subpage.title }}</v-list-item-title>
+                    </v-list-item>
+                  </v-list>
+                </v-menu>
+              </v-list-item>
+
+              <!-- If the section doesn't have subpages, just show a button that links to the section page -->
+              <v-list-item
+                v-if="!section.subpages || !section.subpages.length"
+                :key="section.name"
+                class="section-trigger"
+                base-color="headertext"
+                :to="section.link"
+              >
+                <v-icon :icon="section.icon" class="mr-1" color="grey-lighten-1"></v-icon>
+                {{ section.name }}
+              </v-list-item>
+            </template>
+
           </div>
         </div>
 
@@ -60,16 +157,19 @@
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { useTheme } from 'vuetify'
+import { useRoute } from 'vue-router'
 import { useAppStore } from '@/store/app'
 
 const store = useAppStore()
 const theme = useTheme()
+const route = useRoute()
 
 const appBarRef = ref(null)
 const appBarHeight = ref(80)
 const appBarMarginTop = ref(0)
 const lastScrollY = ref(0)
 const lastToggleY = ref(0)
+const openMenus = ref({})
 const toggleUpThreshold = 100
 const toggledUp = ref(true)
 
@@ -96,7 +196,6 @@ function updateAppBarMargin(currentY, delta) {
   }
 }
 
-
 function handleScroll() {
   const currentY = window.scrollY
   const delta = currentY - lastScrollY.value
@@ -122,6 +221,29 @@ onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll)
 })
 
+function isMenuOpen (sectionName) {
+  return !!openMenus.value[sectionName]
+}
+
+function setMenuOpen (sectionName, value) {
+  openMenus.value = {
+    ...openMenus.value,
+    [sectionName]: value,
+  }
+}
+
+// Whether we are currently on the given section page
+function isSectionActive (section) {
+  if (!section?.link) return false
+
+  const currentPath = route.path || '/'
+  const sectionPath = section.link.split('#')[0].split('?')[0]
+  const normalizedCurrentPath = currentPath === '/' ? '/' : currentPath.replace(/\/$/, '')
+  const normalizedSectionPath = sectionPath === '/' ? '/' : sectionPath.replace(/\/$/, '')
+
+  return normalizedCurrentPath === normalizedSectionPath
+}
+
 function toggleTheme () {
   store.darkmode = theme.global.current.value.dark ? 'light' : 'dark'
   theme.global.name.value = store.darkmode
@@ -138,8 +260,19 @@ export default {
       sidebar: false,
       sections: [
         { name: "Home", link: "/homepage/#home", icon: "mdi-home"},
-        { name: "Technical projects", link: "/homepage/#technicalprojects", icon: "mdi-wrench"},
-        { name: "Hobby projects", link: "/homepage/#funprojects", icon: "mdi-star"},
+        { name: "Technical projects", link: "/homepage/#technicalprojects", icon: "mdi-wrench",
+          subpages: [
+            { title: "Master’s Thesis: Blue Noise Distributed MCMC", link: "/projects/masterthesis", external: false },
+            { title: "Master’s Small Project: UV Ray Tracing", link: "/projects/smallproject", external: false },
+            { title: "Bachelor’s Final Project: Applied Training Game", link: "https://softwareprojecten.sites.uu.nl/2021/07/29/applied-training-game-internationale-operaties-sequel/", external: true },
+          ]
+        },
+        { name: "Hobby projects", link: "/homepage/#funprojects", icon: "mdi-star",
+          subpages: [
+            { title: "Minecraft Mod: Weaponized Baseball", link: "https://www.curseforge.com/minecraft/mc-mods/weaponized-baseball", external: true },
+            { title: "Portfolio website", link: "https://oscar.fickel.nl/", external: false },
+            { title: "Argus Kiesgame", link: "https://argusutrecht.wordpress.com/argus-kiesgame/", external: true },
+          ]},
         { name: "Code sample", link: "/codesample", icon: "mdi-code-braces"},
         { name: "Education", link: "/cv/#education", icon: "mdi-school"},
         { name: "Experience", link: "/cv/#experience", icon: "mdi-briefcase"},
@@ -159,6 +292,11 @@ export default {
   .dropdown { display: inline-block; }
 }
 
+.section-trigger {
+  min-height: 100%;
+  padding: 19px 12px;
+}
+
 .fixed-bar {
   will-change: margin-top;
 }
@@ -169,5 +307,15 @@ export default {
   flex: 0 1 auto;
   width: 100%;
   display: flex;
+}
+
+.routerLink{
+     text-decoration: none;
+ }
+.drawer-item :deep(.v-list-item-title) {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  line-height: 1.3;
 }
 </style>
