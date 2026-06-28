@@ -37,13 +37,13 @@
           <div class="me-avatar-container d-flex align-center justify-end ml-auto mb-3 mt-3"
           >
             <v-avatar v-show="ouch" size="160px" variant="elevated" @mousedown="ouch = true" @mouseup="ouch = false" class="ml-3 my-auto">
-              <v-img height="200" src="@/assets/facepinch.jpg" />
+              <v-img height="200" :src="facePinchImage" eager="true" />
             </v-avatar>
             <v-avatar v-show="!ouch && !bright" size="160px" variant="elevated" @mousedown="ouch = true" @mouseup="ouch = false" class="ml-3 my-auto">
-              <v-img height="200" src="@/assets/face.jpg" />
+              <v-img height="200" :src="faceImage" eager="true" />
             </v-avatar>
             <v-avatar v-show="!ouch && bright" size="160px" variant="elevated" @mousedown="ouch = true" @mouseup="ouch = false" class="ml-3 my-auto">
-              <v-img height="200" src="@/assets/facebright.jpg" />
+              <v-img height="200" :src="faceBrightImage" eager="true" />
             </v-avatar>
           </div>
         </div>
@@ -100,14 +100,42 @@
 <script setup>
 import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { useTheme } from 'vuetify'
+import faceImage from '@/assets/face.jpg'
+import facePinchImage from '@/assets/facepinch.jpg'
+import faceBrightImage from '@/assets/facebright.jpg'
 
 const ouch = ref(false) // To show a pinched face when pressing avatar
 const bright = ref(false) // To show an eyes widened face when switching to light mode
+const imagesReady = ref(false)
+
+async function preloadAvatarImages() {
+  if (typeof window === 'undefined') return
+
+  const avatarImages = [faceImage, facePinchImage, faceBrightImage]
+  await Promise.all(
+    avatarImages.map((src) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image()
+        img.onload = () => {
+          if (typeof img.decode === 'function') {
+            img.decode().then(() => resolve(src)).catch(() => resolve(src))
+          } else {
+            resolve(src)
+          }
+        }
+        img.onerror = () => reject(new Error(`Failed to load ${src}`))
+        img.src = src
+      })
+    })
+  )
+
+  imagesReady.value = true
+}
 
 watch(useTheme().global.name, async (newMode, oldMode) => {
   if(newMode == 'light' && oldMode == 'dark'){
     bright.value = true;
-    setTimeout(() => {bright.value = false}, 1000);
+    setTimeout(() => {bright.value = false}, 500);
   }
 })
 
@@ -124,6 +152,8 @@ function handleMediaChangeWide(event) {
 }
 
 onMounted(() => {
+  preloadAvatarImages()
+
   if (typeof window === 'undefined') return
   mediaQuery = window.matchMedia('(max-width: 270px)')
   mediaQueryWide = window.matchMedia('(min-width: 5000px)')
