@@ -75,7 +75,7 @@ Research Committee’ of study association Sticky.</div>
             Buyitdirect
           </div>
           <div class="text-caption">
-            Digitising invoices and managing the order backlog.</div>
+            Digitising invoices and order backlog maintenance.</div>
         </div>
 
         <v-img class="d-flex ma-2 ml-auto" min-width="50" max-width="50" src="@/assets/project_logos/buyitdirect.png" />

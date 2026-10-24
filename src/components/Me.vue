@@ -17,32 +17,33 @@
             class="mr-auto text-justify"
               >
               <span>
-                Simulation software developer at InControl, with a background in Game & Media Technology.
+                Hi there! <br>
+                I am a simulation software developer at InControl, with a background in Game & Media Technology and Computer Science,
+                and a passion for the endless possibilities in creating virtual worlds.
                 <br>
-                <br>
-                Thank you for your interest! Feel free to have a look around, and be sure to send me an email if it inspires any questions
+                Thank you for your interest in browsing my portfolio. Feel free to have a look around, and be sure to send me an email if anything inspires any questions!
                 <br>
                 <br>
                 Note: website content was last updated on februari 2024.
               </span>
-            <!-- <span
-                      >Recently graduated with a Master’s degree in Computer Science
-            (Game and Media Technology). I have spent the last year of my
-            master’s focused on ray tracing, and hope to continue specialising
-            in computer graphics and/or engine programming</span> -->
             </div>
 
           </div>
 
           <div class="me-avatar-container d-flex align-center justify-end ml-auto mb-3 mt-3"
           >
-            <v-avatar v-show="ouch" size="160px" variant="elevated" @mousedown="ouch = true" @mouseup="ouch = false" class="ml-3 my-auto">
+            <v-avatar v-show="ouch" size="160px" variant="elevated" @mousedown="ouch = true" @mouseup="playFaceRipple" class="ml-3 my-auto">
               <v-img height="200" :src="facePinchImage" eager="true" />
             </v-avatar>
-            <v-avatar v-show="!ouch && !bright" size="160px" variant="elevated" @mousedown="ouch = true" @mouseup="ouch = false" class="ml-3 my-auto">
+            <v-avatar v-show="!ouch && faceVideo" size="160px" variant="elevated" @mousedown="ouch = true" class="ml-3 my-auto">
+              <video ref="faceRippleVideo" autoplay muted playsinline class="face-ripple-video" @ended="faceVideo = false">
+                <source :src="faceRippleVideoSource" type="video/mp4">
+              </video>
+            </v-avatar>
+            <v-avatar v-show="!ouch && !faceVideo && !bright" size="160px" variant="elevated" @mousedown="ouch = true" @mouseup="playFaceRipple" class="ml-3 my-auto">
               <v-img height="200" :src="faceImage" eager="true" />
             </v-avatar>
-            <v-avatar v-show="!ouch && bright" size="160px" variant="elevated" @mousedown="ouch = true" @mouseup="ouch = false" class="ml-3 my-auto">
+            <v-avatar v-show="!ouch && !faceVideo && bright" size="160px" variant="elevated" @mousedown="ouch = true" @mouseup="playFaceRipple" class="ml-3 my-auto">
               <v-img height="200" :src="faceBrightImage" eager="true" />
             </v-avatar>
           </div>
@@ -78,7 +79,7 @@
             Github
           </v-chip>
 
-          <v-chip
+          <!-- <v-chip
             color="primary"
             variant="elevated"
             href="/OscarFickelCV.pdf"
@@ -86,7 +87,7 @@
           >
             <v-icon start icon="mdi-file-document"></v-icon>
             CV (outdated)
-          </v-chip>
+          </v-chip> -->
 
         </div>
       </div>
@@ -98,15 +99,28 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { ref, nextTick, onMounted, onUnmounted, watch } from 'vue'
 import { useTheme } from 'vuetify'
 import faceImage from '@/assets/face.jpg'
 import facePinchImage from '@/assets/facepinch.jpg'
 import faceBrightImage from '@/assets/facebright.jpg'
+import faceRippleVideoSource from '@/assets/FaceRipple.mp4'
 
 const ouch = ref(false) // To show a pinched face when pressing avatar
+const faceVideo = ref(false)
+const faceRippleVideo = ref(null)
 const bright = ref(false) // To show an eyes widened face when switching to light mode
 const imagesReady = ref(false)
+
+async function playFaceRipple() {
+  ouch.value = false
+  faceVideo.value = true
+  await nextTick()
+  if (faceRippleVideo.value) faceRippleVideo.value.currentTime = 0
+  faceRippleVideo.value?.play().catch(() => {
+    faceVideo.value = false
+  })
+}
 
 async function preloadAvatarImages() {
   if (typeof window === 'undefined') return
@@ -193,6 +207,11 @@ onUnmounted(() => {
   display: flex;
   justify-content: flex-end;
   margin-left: auto;
+}
+.face-ripple-video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .chips-container{
   flex-wrap: nowrap;
