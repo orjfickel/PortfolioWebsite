@@ -5,7 +5,7 @@
 
   <v-row class="d-flex">
     <v-col class="d-flex text-justify justify-center">
-      <span>These showcase less my technical skills, and are more fun endeavors that display my creativity and drive to pursue different kinds of projects!
+      <span>These are less a showcase of my technical skills, but I still like to show them as a display of my interest in these different kinds of more creative projects in addition to my more serious projects
       </span>
     </v-col>
   </v-row>
@@ -48,7 +48,7 @@
       </v-col>
       <v-col cols="auto" md="" class="pb-0 d-flex flex-column">
         <h2 class="projecttitle text-h4">Portfolio Website</h2>
-        <Date date="2023"></Date>
+        <Date date="2023-"></Date>
         <v-responsive min-width="200"  class="text-justify">
           <span>A simple responsive website to showcase my portfolio, made with Vue</span>
         </v-responsive>

@@ -1,7 +1,7 @@
 <template>
   <v-div>
     <!-- The navigation drawer to the side of the screen if small enough -->
-    <v-navigation-drawer :style="{background: $vuetify.theme.current.colors.header}"
+    <v-navigation-drawer class="navigation-drawer" :style="{background: $vuetify.theme.current.colors.header}"
         temporary v-model="sidebar" app location="right"
         >
       <v-list>
@@ -10,6 +10,7 @@
           key="drawer"
           @click="sidebar = false"
           base-color="headertext"
+          color="headertext"
           prepend-icon="$menu"
           >
 
@@ -19,6 +20,7 @@
           <v-list-item
             v-if="!section.subpages || !section.subpages.length"
             base-color="headertext"
+            color="headertext"
             :to="section.link"
             :title="section.name"
             :prepend-icon="section.icon"
@@ -28,11 +30,12 @@
           </v-list-item>
 
           <!-- Show a section button that toggles a dropdown -->
-          <v-list-group v-else :value="section.name" base-color="headertext">
+          <v-list-group v-else :value="section.name" base-color="headertext" color="headertext">
             <template v-slot:activator="{ props }">
               <v-list-item
                 v-bind="props"
                 base-color="headertext"
+                color="headertext"
                 :title="section.name"
                 :prepend-icon="section.icon"
                 :class="{ 'v-list-item--active': isSectionActive(section) }"
@@ -42,9 +45,10 @@
             </template>
 
             <!-- Show as the first item in the dropdown a link to the main page of the section -->
-            <router-link :to="section.link"  class="routerLink">
+            <router-link :to="section.link" class="routerLink">
               <v-list-item
                 base-color="headertext"
+                color="headertext"
                 :title="section.name + ' overview'"
                 @click="sidebar = false"
                 class="drawer-item"
@@ -56,11 +60,13 @@
               v-for="subpage in section.subpages"
               :key="subpage.title"
               base-color="headertext"
+              color="headertext"
               :to="subpage.external ? undefined : subpage.link"
               :href="subpage.external ? subpage.link : undefined"
               :target="subpage.external ? '_blank' : undefined"
               rel="noreferrer"
               :title="subpage.title"
+              :append-icon="subpage.external ? 'mdi-open-in-new' : undefined"
               @click="sidebar = false"
               class="drawer-item"
             >
@@ -86,7 +92,7 @@
                 v-if="section.subpages && section.subpages.length"
                 :key="section.name"
                 class="headerbutton px-0"
-                base-color="headertext"
+                color="headertext"
                 link
                 :class="{ 'v-list-item--active': isSectionActive(section) }"
               >
@@ -105,7 +111,7 @@
                   <v-list>
                     <!-- Show as the first item in the dropdown a link to the main page of the section -->
                     <v-list-item
-                      base-color="headertext"
+                      color="headertext"
                       :to="section.link"
                       :title="section.name + ' overview'"
                       @click="sidebar = false"
@@ -119,6 +125,7 @@
                       :href="subpage.external ? subpage.link : undefined"
                       :target="subpage.external ? '_blank' : undefined"
                       rel="noreferrer"
+                      :append-icon="subpage.external ? 'mdi-open-in-new' : undefined"
                     >
                       <v-list-item-title>{{ subpage.title }}</v-list-item-title>
                     </v-list-item>
@@ -131,7 +138,7 @@
                 v-if="!section.subpages || !section.subpages.length"
                 :key="section.name"
                 class="section-trigger"
-                base-color="headertext"
+                color="headertext"
                 :to="section.link"
               >
                 <v-icon :icon="section.icon" class="mr-1" color="grey-lighten-1"></v-icon>
@@ -142,7 +149,7 @@
           </div>
         </div>
 
-        <v-btn @click="toggleTheme" icon="mdi-brightness-6" title="Toggle dark/light mode" class="ml-2" color="headertext">
+        <v-btn @click="toggleTheme" icon="mdi-brightness-6" title="Toggle dark/light mode" class="ml-2 my-auto" color="headertext">
         </v-btn>
 
         <span class="dropdown" title="Navigation bar">
@@ -270,7 +277,7 @@ export default {
         { name: "Hobby projects", link: "/homepage/#funprojects", icon: "mdi-star",
           subpages: [
             { title: "Minecraft Mod: Weaponized Baseball", link: "https://www.curseforge.com/minecraft/mc-mods/weaponized-baseball", external: true },
-            { title: "Portfolio website", link: "https://oscar.fickel.nl/", external: false },
+            { title: "Portfolio website", link: "https://oscar.fickel.nl/", external: true },
             { title: "Argus Kiesgame", link: "https://argusutrecht.wordpress.com/argus-kiesgame/", external: true },
           ]},
         { name: "Code sample", link: "/codesample", icon: "mdi-code-braces"},
@@ -310,9 +317,14 @@ export default {
 }
 
 .routerLink{
-     text-decoration: none;
+  color: inherit;
+  text-decoration: none;
  }
+:global(.navigation-drawer .v-icon) {
+  color: rgb(var(--v-theme-headertext));
+}
 .drawer-item :deep(.v-list-item-title) {
+  color: rgb(var(--v-theme-headertext));
   white-space: normal;
   overflow: visible;
   text-overflow: unset;

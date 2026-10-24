@@ -8,7 +8,9 @@
       Here I'll present an example of some of the C++ and OpenCL code I
       have written, specifically the central code for the <router-link to="/projects/smallproject">UV ray tracer project</router-link>
       (click for more details, including the full source code).<br>
-
+      It should be said that of course good programming involves much more than a single specific excerpt can show.
+      The following does not show as much proper software architecture or even the process of designing code, as much as it is simply a way to more tangibly show some of the coding I have done. <br>
+      <br>
       The function of this code is to use the input of a 3D model of a room
       and a number of UV lamps, and show how much UV light is received by the
       room's surfaces. This is done by shooting rays from these lamps and counting
