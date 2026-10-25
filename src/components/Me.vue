@@ -30,25 +30,27 @@
 
           </div>
 
-          <div class="me-avatar-container d-flex align-center justify-end ml-auto mb-3 mt-3"
+          <div class="me-avatar-container d-flex align-center justify-end ml-auto mb-3 mt-3">
+            <div class="me-avatar-trigger d-flex"
             @pointerdown="ouch = true"
             @pointerup="playFaceRipple"
             @pointercancel="ouch = false"
-          >
-            <v-avatar v-show="ouch" size="160px" variant="elevated" class="ml-3 my-auto">
-              <v-img height="200" :src="facePinchImage" eager="true" />
-            </v-avatar>
-            <v-avatar v-show="!ouch && faceVideo" size="160px" variant="elevated" class="ml-3 my-auto">
-              <video ref="faceRippleVideo" autoplay muted playsinline class="face-ripple-video" @ended="faceVideo = false">
-                <source :src="faceRippleVideoSource" type="video/mp4">
-              </video>
-            </v-avatar>
-            <v-avatar v-show="!ouch && !faceVideo && !bright" size="160px" variant="elevated" class="ml-3 my-auto">
-              <v-img height="200" :src="faceImage" eager="true" />
-            </v-avatar>
-            <v-avatar v-show="!ouch && !faceVideo && bright" size="160px" variant="elevated" class="ml-3 my-auto">
-              <v-img height="200" :src="faceBrightImage" eager="true" />
-            </v-avatar>
+            >
+              <v-avatar v-show="ouch" size="160px" variant="elevated" class="ml-3 my-auto">
+                <v-img :src="facePinchImage" eager="true" />
+              </v-avatar>
+              <v-avatar v-show="!ouch && faceVideo" size="160px" variant="elevated" class="ml-3 my-auto">
+                <video ref="faceRippleVideo" autoplay muted playsinline class="face-ripple-video ma-auto" @ended="faceVideo = false">
+                  <source :src="faceRippleVideoSource" type="video/mp4">
+                </video>
+              </v-avatar>
+              <v-avatar v-show="!ouch && !faceVideo && !bright" size="160px" variant="elevated" class="ml-3 my-auto">
+                <v-img :src="faceImage" eager="true" />
+              </v-avatar>
+              <v-avatar v-show="!ouch && !faceVideo && bright" size="160px" variant="elevated" class="ml-3 my-auto">
+                <v-img :src="faceBrightImage" eager="true" />
+              </v-avatar>
+            </div>
           </div>
         </div>
         <div class="chips-container d-flex align-end mt-n1 mb-1" style=" gap: 10px;">
@@ -211,10 +213,16 @@ onUnmounted(() => {
   justify-content: flex-end;
   margin-left: auto;
 }
+.me-avatar-trigger{
+  align-items: center;
+}
 .face-ripple-video{
+  position: absolute;
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 .chips-container{
   flex-wrap: nowrap;
