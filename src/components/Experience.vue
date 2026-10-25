@@ -22,7 +22,9 @@
               InControl Enterprise Dynamics
           </div>
           <div class="text-caption">
-            Software developer for simulation programs. From regular maintenance to designing new features and systems.</div>
+            From bugfixing to both designing and implementing new features and systems.
+            <!-- See my <RouterLink to="/homepage/#technicalprojects">main projects</RouterLink> for more details. -->
+          </div>
         </div>
 
         <v-img class="d-flex ma-2 ml-auto" min-width="50" max-width="50" src="@/assets/project_logos/InControl.png" />

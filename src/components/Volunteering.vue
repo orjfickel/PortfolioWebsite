@@ -47,7 +47,7 @@
               BuurtBuik
           </div>
           <div class="text-caption">
-            Once a month being responsible for the smooth operation of our group of volunteers that day cooking a free meal for visitors,
+            Once a month being responsible for smooth operations as our group of volunteers that day cooks a free meal for visitors,
             made mostly from leftovers of nearby local supermarkets.</div>
         </div>
 

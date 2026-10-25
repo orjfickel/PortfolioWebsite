@@ -35,6 +35,10 @@ import Certificates from '@/components/Certificates.vue'
 .timeline-year {
   margin-left: -1em;
 }
+
+.v-theme--dark .v-timeline .v-timeline-divider__dot {
+  background-color: rgba(var(--v-theme-on-surface), 0.1);
+}
 </style>
 
 <style scoped>
