@@ -103,12 +103,15 @@
                   @update:model-value="value => setMenuOpen(section.name, value)"
                 >
                   <template v-slot:activator="{ props }">
-                    <div v-bind="props" class="section-trigger">
+                    <div v-bind="props" class="section-trigger drawer-item">
                       <v-icon :icon="section.icon" class="mr-1" color="grey-lighten-1"></v-icon>
                       {{ section.name }}
                     </div>
                   </template>
-                  <v-list>
+                  <v-list
+                    :style="{background: $vuetify.theme.current.colors.header}"
+                    class="drawer-item header-menu"
+                  >
                     <!-- Show as the first item in the dropdown a link to the main page of the section -->
                     <v-list-item
                       color="headertext"
@@ -267,14 +270,14 @@ export default {
       sidebar: false,
       sections: [
         { name: "Home", link: "/homepage/#home", icon: "mdi-home"},
-        { name: "Technical projects", link: "/homepage/#technicalprojects", icon: "mdi-wrench",
+        { name: "Main projects", link: "/homepage/#technicalprojects", icon: "mdi-wrench",
           subpages: [
             { title: "Master’s Thesis: Blue Noise Distributed MCMC", link: "/projects/masterthesis", external: false },
             { title: "Master’s Small Project: UV Ray Tracing", link: "/projects/smallproject", external: false },
             { title: "Bachelor’s Final Project: Applied Training Game", link: "https://softwareprojecten.sites.uu.nl/2021/07/29/applied-training-game-internationale-operaties-sequel/", external: true },
           ]
         },
-        { name: "Hobby projects", link: "/homepage/#funprojects", icon: "mdi-star",
+        { name: "Side projects", link: "/homepage/#funprojects", icon: "mdi-star",
           subpages: [
             { title: "Minecraft Mod: Weaponized Baseball", link: "https://www.curseforge.com/minecraft/mc-mods/weaponized-baseball", external: true },
             { title: "Portfolio website", link: "https://oscar.fickel.nl/", external: true },
@@ -283,7 +286,7 @@ export default {
         { name: "Code sample", link: "/codesample", icon: "mdi-code-braces"},
         { name: "Education", link: "/cv/#education", icon: "mdi-school"},
         { name: "Experience", link: "/cv/#experience", icon: "mdi-briefcase"},
-        { name: "Certificates", link: "/cv/#certificates", icon: "mdi-certificate"},
+        // { name: "Certificates", link: "/cv/#certificates", icon: "mdi-certificate"},
       ],
     };
   },
@@ -329,5 +332,9 @@ export default {
   overflow: visible;
   text-overflow: unset;
   line-height: 1.3;
+}
+.header-menu :deep(.v-list-item__append .v-icon) {
+  color: rgb(var(--v-theme-headertext));
+  opacity: 1;
 }
 </style>
