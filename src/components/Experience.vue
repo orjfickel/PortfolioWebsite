@@ -11,7 +11,32 @@
     >
       <div class="d-flex">
         <div>
-        <div><strong class="me-4 text-no-wrap">2020-2021</strong></div>
+        <div><strong class="timeline-year mr-12 text-no-wrap">2024-</strong></div>
+        </div>
+
+        <div class="">
+          <strong class="me-4">Software Developer Simulation</strong>
+
+          <div class="text-caption">
+            <v-icon start color="secondary" icon="mdi-map-marker" class="mr-0"></v-icon>
+              InControl Enterprise Dynamics
+          </div>
+          <div class="text-caption">
+            Software developer for simulation programs. From regular maintenance to designing new features and systems.</div>
+        </div>
+
+        <v-img class="d-flex ma-2 ml-auto" min-width="50" max-width="50" src="@/assets/project_logos/InControl.png" />
+      </div>
+    </v-timeline-item>
+
+    <v-timeline-item
+      dot-color="primary"
+      size="small"
+      min-width="100%"
+    >
+      <div class="d-flex">
+        <div>
+        <div><strong class="timeline-year me-3 text-no-wrap">2020-2021</strong></div>
         </div>
 
         <div class="">
@@ -38,33 +63,7 @@ courses ‘Modelleren en Systeemontwikkeling’ and
     >
       <div class="d-flex">
         <div>
-        <div><strong class="me-4 text-no-wrap">2019-2021</strong></div>
-        </div>
-
-        <div class="">
-          <strong class="me-4">Treasurer</strong>
-
-          <div class="text-caption">
-            <v-icon start color="secondary" icon="mdi-map-marker" class="mr-0"></v-icon>
-              DGDARC
-          </div>
-          <div class="text-caption">
-            Treasurer for the ’Dutch Game Development And
-Research Committee’ of study association Sticky.</div>
-        </div>
-
-        <v-img class="d-flex ma-2 ml-auto" min-width="50" max-width="50" src="@/assets/project_logos/DGDARCL.png" />
-      </div>
-    </v-timeline-item>
-
-    <v-timeline-item
-      dot-color="primary"
-      size="small"
-      min-width="100%"
-    >
-      <div class="d-flex">
-        <div>
-        <div><strong class="mr-15 text-no-wrap">2018</strong></div>
+        <div><strong class="timeline-year mr-13 text-no-wrap">2018</strong></div>
         </div>
 
         <div class="">

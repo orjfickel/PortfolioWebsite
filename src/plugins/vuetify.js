@@ -46,7 +46,7 @@ export default createVuetify({
       dark: {
         dark: true,
         variables: {
-          'border-color': '#000000',
+          'border-color': '#f0f4f7',
           'border-opacity': 0.12,
           'high-emphasis-opacity': 0.87,
           'medium-emphasis-opacity': 0.60,
@@ -66,7 +66,7 @@ export default createVuetify({
           header: '#010408',
           headertext: '#f0f4f7',
           bodytext: '#f0f4f7',
-          button: '#151a21',
+          button: '#152116',
           icon: '#BDBDBD',
         },
       },

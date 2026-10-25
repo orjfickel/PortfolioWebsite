@@ -10,8 +10,14 @@
       </div>
     </div>
     <v-divider class=" my-9 "></v-divider>
-    <div>
-      <Certificates id="certificates"/>
+    <div class="edusperience d-flex pt-4 justify-center">
+      <div>
+        <Volunteering id="volunteering"/>
+      </div>
+      <v-divider class="divider mt-8 mb-4 "></v-divider>
+      <div>
+        <Certificates id="certificates"/>
+      </div>
     </div>
     <v-divider class="mt-8 "></v-divider>
   </v-container>
@@ -21,8 +27,15 @@
 <script setup>
 import Education from '@/components/Education.vue'
 import Experience from '@/components/Experience.vue'
+import Volunteering from '@/components/Volunteering.vue'
 import Certificates from '@/components/Certificates.vue'
 </script>
+
+<style>
+.timeline-year {
+  margin-left: -1em;
+}
+</style>
 
 <style scoped>
 .edusperience{
