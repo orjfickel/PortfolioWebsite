@@ -2,11 +2,11 @@
   <v-container class="pt-0">
     <div class="edusperience d-flex pt-4 justify-center">
       <div>
-        <Education id="education"/>
+        <Experience id="experience"/>
       </div>
       <v-divider class="divider mt-8 mb-4 "></v-divider>
       <div>
-        <Experience id="experience"/>
+        <Education id="education"/>
       </div>
     </div>
     <v-divider class=" my-9 "></v-divider>
@@ -32,7 +32,14 @@ import Certificates from '@/components/Certificates.vue'
 </script>
 
 <style>
+.timeline-year-column {
+  flex: 0 0 4rem;
+}
 .timeline-year {
+  margin-left: -1em;
+  font-size: small;
+}
+.timeline {
   margin-left: -1em;
 }
 

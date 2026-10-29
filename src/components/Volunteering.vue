@@ -2,7 +2,7 @@
 <div class="pt-4">
   <h1 class="text-h3 font-weight-light d-flex justify-center">Volunteering</h1>
   <v-divider class=" my-8 "></v-divider>
-  <v-timeline side="end" align="start" class="timeline-year"
+  <v-timeline side="end" align="start" class="timeline"
   >
     <v-timeline-item
       dot-color="primary"
@@ -10,12 +10,12 @@
       min-width="100%"
     >
       <div class="d-flex">
-        <div>
-        <div><strong class="mr-13 text-no-wrap timeline-year">2025-</strong></div>
+        <div class="timeline-year-column">
+        <div><strong class="text-no-wrap timeline-year">2025-</strong></div>
         </div>
 
         <div class="">
-          <strong class="me-4">Supervisor VR Program</strong>
+          <strong class="">Supervisor VR Program</strong>
 
           <div class="text-caption">
             <v-icon start color="secondary" icon="mdi-map-marker" class="mr-0"></v-icon>
@@ -35,12 +35,12 @@
       min-width="100%"
     >
       <div class="d-flex">
-        <div>
-        <div><strong class="mr-13 text-no-wrap timeline-year">2025-</strong></div>
+        <div class="timeline-year-column">
+        <div><strong class="text-no-wrap timeline-year">2025-</strong></div>
         </div>
 
         <div class="">
-          <strong class="me-4">Day Coordinator Volunteer Cooking</strong>
+          <strong class="">Day Coordinator Volunteer Cooking</strong>
 
           <div class="text-caption">
             <v-icon start color="secondary" icon="mdi-map-marker" class="mr-0"></v-icon>
@@ -61,12 +61,12 @@
       min-width="100%"
     >
       <div class="d-flex">
-        <div>
-        <div><strong class="me-3 timeline-year text-no-wrap">2019-2021</strong></div>
+        <div class="timeline-year-column">
+        <div><strong class="timeline-year text-no-wrap">2019-2021</strong></div>
         </div>
 
         <div class="">
-          <strong class="me-4">Treasurer</strong>
+          <strong class="">Treasurer</strong>
 
           <div class="text-caption">
             <v-icon start color="secondary" icon="mdi-map-marker" class="mr-0"></v-icon>

@@ -2,7 +2,7 @@
 <div class="pt-4">
   <h1 class="text-h3 font-weight-light d-flex justify-center">Education</h1>
   <v-divider class=" my-8 "></v-divider>
-  <v-timeline side="end" align="start" class="timeline-year"
+  <v-timeline side="end" align="start" class="timeline"
   >
     <v-timeline-item
       dot-color="primary"
@@ -10,12 +10,12 @@
       min-width="100%"
     >
       <div class="d-flex">
-        <div>
-        <div><strong class="timeline-year me-3 text-no-wrap">2021-2023</strong></div>
+        <div class="timeline-year-column">
+        <div><strong class="timeline-year text-no-wrap">2021-2023</strong></div>
         </div>
 
         <div class="d-flex flex-column">
-          <strong class="me-4">Master Game and Media Technology</strong>
+          <strong class="">Master Game and Media Technology</strong>
 
           <div class="text-caption">
             <v-icon start color="secondary" icon="mdi-map-marker" class="mr-0"></v-icon>
@@ -39,12 +39,12 @@
       class=" timeline_item "
     >
       <div class="d-flex">
-        <div class="d-flex">
-        <div><strong class="timeline-year me-3 text-no-wrap">2018-2021</strong></div>
+        <div class="timeline-year-column">
+        <div><strong class="timeline-year text-no-wrap">2018-2021</strong></div>
         </div>
 
         <div class="d-flex flex-column">
-          <strong class="me-4">Bachelor Computer Science</strong>
+          <strong class="">Bachelor Computer Science</strong>
 
           <div class="text-caption">
             <v-icon start color="secondary" icon="mdi-map-marker" class="mr-0"></v-icon>
@@ -67,8 +67,8 @@ technology.</div>
       min-width="100%"
     >
       <div class="d-flex">
-        <div>
-        <div><strong class="timeline-year me-3 text-no-wrap">2012-2018</strong></div>
+        <div class="timeline-year-column">
+        <div><strong class="timeline-year text-no-wrap">2012-2018</strong></div>
         </div>
 
         <div class="d-flex flex-column">

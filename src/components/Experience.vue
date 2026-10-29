@@ -2,7 +2,7 @@
 <div class="pt-4">
   <h1 class="text-h3 font-weight-light d-flex justify-center">Experience</h1>
   <v-divider class=" my-8 "></v-divider>
-  <v-timeline side="end" align="start"
+  <v-timeline side="end" align="start" class="timeline"
   >
     <v-timeline-item
       dot-color="primary"
@@ -10,12 +10,12 @@
       min-width="100%"
     >
       <div class="d-flex">
-        <div>
-        <div><strong class="timeline-year mr-12 text-no-wrap">2024-</strong></div>
+        <div class="timeline-year-column">
+          <strong class="timeline-year text-no-wrap">2024-</strong>
         </div>
 
         <div class="">
-          <strong class="me-4">Software Developer Simulation</strong>
+          <strong class="">Software Developer Simulation</strong>
 
           <div class="text-caption">
             <v-icon start color="secondary" icon="mdi-map-marker" class="mr-0"></v-icon>
@@ -37,12 +37,12 @@
       min-width="100%"
     >
       <div class="d-flex">
-        <div>
-        <div><strong class="timeline-year me-3 text-no-wrap">2020-2021</strong></div>
+        <div class="timeline-year-column">
+          <strong class="timeline-year text-no-wrap">2020-2021</strong>
         </div>
 
         <div class="">
-          <strong class="me-4">Teaching Assistant</strong>
+          <strong class="">Teaching Assistant</strong>
 
           <div class="text-caption">
             <v-icon start color="secondary" icon="mdi-map-marker" class="mr-0"></v-icon>
@@ -64,12 +64,12 @@ courses ‘Modelleren en Systeemontwikkeling’ and
       min-width="100%"
     >
       <div class="d-flex">
-        <div>
-        <div><strong class="timeline-year mr-13 text-no-wrap">2018</strong></div>
+        <div class="timeline-year-column">
+          <strong class="timeline-year text-no-wrap">2018</strong>
         </div>
 
         <div class="">
-          <strong class="me-4">Customer Service Employee</strong>
+          <strong class="">Customer Service Employee</strong>
 
           <div class="text-caption">
             <v-icon start color="secondary" icon="mdi-map-marker" class="mr-0"></v-icon>
