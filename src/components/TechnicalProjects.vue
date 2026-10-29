@@ -13,6 +13,35 @@
 
   <div class="project">
     <v-row class="d-flex mb-auto">
+      <v-col cols="12" md="6" class="d-flex flex-column pb-0">
+        <h2 class="projecttitle text-h4">Flexible Rail Infra Simulation of Operations (FRISO)</h2>
+
+        <Date date="2024 - 2026"></Date>
+
+        <div class="text-justify">
+          <span class="">
+            At InControl Enterprise Dynamics I have learned a lot about software development 'in the real world',
+            outside of the theoretical optimisations you learn in university. I started working here as Simulation Software Developer
+            on maintaining and extending the FRISO simulator, for which I have worked on numerous projects.<br>
+            For one, I worked on a project collaborating with the TU Delft to connect their <a target="_blank" href="https://research.tudelft.nl/en/publications/automatic-generation-of-train-path-envelopes-for-automatic-train-/">Train Path Envelope (TPE)</a> Python algorithm with FRISO via the (C++) HLA communication framework,
+            to be able to simulate it together with an Automatic Train Operation (ATO) module.<br>
+            I also took a stranded idea and built upon it to design an entire new (C#) database interaction system for the program used to feed data into FRISO.
+            Before that I refactored the way we imported train schedules into that same program.
+            Lastly, I also worked on porting a braking curve module from FRISO into a C++ DLL that could be used by other external parties.
+          </span>
+        </div>
+        <Grade pagelink="https://www.incontrolsim.com/software-railway-simulator/" ></Grade>
+      </v-col>
+      <v-col cols="12" md="6" class="d-flex mx-auto justify-center pb-0">
+        <v-img src="@/assets/friso.png" style="z-index: 1; width: 100%;"/>
+      </v-col>
+    </v-row>
+  </div>
+
+  <v-divider class="mt-8 mb-10 "></v-divider>
+
+  <div class="project">
+    <v-row class="d-flex mb-auto">
       <v-col cols="auto" md="" class="d-flex flex-column pb-0">
         <h2 class="projecttitle text-h4">Master’s Thesis: Blue Noise Distributed
         MCMC Decorrelation of ReSTIR</h2>
